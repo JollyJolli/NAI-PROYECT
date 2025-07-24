@@ -1,0 +1,41 @@
+{
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/naiproject",
+            "icon": "twitter"
+        },
+        {
+            "name": "Instagram",
+            "url": "https://instagram.com/naiproject",
+            "icon": "instagram"
+        },
+        {
+            "name": "Discord",
+            "url": "https://discord.gg/naiproject",
+            "icon": "discord"
+        }
+    ],
+    "contact": [
+        {
+            "type": "email",
+            "value": "contacto@naiproject.com",
+            "icon": "fas fa-envelope"
+        },
+        {
+            "type": "discord",
+            "value": "discord.gg/naiproject",
+            "icon": "fab fa-discord"
+        }
+    ],
+    "additional": [
+        {
+            "title": "Preguntas Frecuentes",
+            "content": "<div class='faq'><h4>¿Cómo me uno a las carreras?</h4><p>Únete a nuestro Discord para más información.</p></div>"
+        },
+        {
+            "title": "Links Útiles",
+            "content": "<ul><li><a href='#'>Reglamento General</a></li><li><a href='#'>Guía para Novatos</a></li></ul>"
+        }
+    ]
+}

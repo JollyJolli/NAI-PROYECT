@@ -1,0 +1,42 @@
+{
+    "Formula Argentina": [
+        {
+            "name": "Gran Premio de Buenos Aires",
+            "track": "Autódromo Oscar y Juan Gálvez",
+            "date": "2025-07-28T20:00:00"
+        },
+        {
+            "name": "Gran Premio de Córdoba",
+            "track": "Autódromo Oscar Cabalén",
+            "date": "2025-08-15T20:00:00"
+        }
+    ],
+    "GT Latam Series": [
+        {
+            "name": "6 Horas de Interlagos",
+            "track": "Autódromo José Carlos Pace",
+            "date": "2025-08-05T19:00:00"
+        }
+    ],
+    "Random Friday Races": [
+        {
+            "name": "Viernes de Clásicos",
+            "track": "Por definir",
+            "date": "2025-07-26T21:00:00"
+        }
+    ],
+    "LT Cup Series": [
+        {
+            "name": "Carrera Sprint Monza",
+            "track": "Autodromo Nazionale Monza",
+            "date": "2025-08-20T20:00:00"
+        }
+    ],
+    "Prototype Endurance Cup": [
+        {
+            "name": "12 Horas de Sebring",
+            "track": "Sebring International Raceway",
+            "date": "2025-09-01T14:00:00"
+        }
+    ]
+}

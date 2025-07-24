@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAI Project</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tabs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-logo">
+            <img src="data/things/LOGO-with-name.png" alt="Logo NAI">
+        </div>
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="inicio">Inicio</button>
+            <button class="tab-btn" data-tab="sobrenosotros">Sobre Nosotros</button>
+            <button class="tab-btn" data-tab="calendario">Calendario</button>
+            <button class="tab-btn" data-tab="extra">Extra</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Inicio Tab -->
+        <section id="inicio" class="tab-content active">
+            <div class="banner-container">
+                <video autoplay loop muted>
+                    <source src="data/things/hero.mp4" type="video/mp4">
+                </video>
+                <div class="stream-status">
+                    <span class="status-indicator"></span>
+                    <span class="status-text">DESCONECTADO</span>
+                </div>
+                <a href="https://www.twitch.tv/simracingamericatv" class="twitch-button">
+                    <i class="fab fa-twitch"></i> Ver en Twitch
+                </a>
+            </div>
+            <div class="next-race">
+                <h2>Próxima Carrera</h2>
+                <div class="race-info"></div>
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <span class="days">00</span>
+                        <span class="label">Días</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="hours">00</span>
+                        <span class="label">Horas</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="minutes">00</span>
+                        <span class="label">Minutos</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="seconds">00</span>
+                        <span class="label">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre Nosotros Tab -->
+        <section id="sobrenosotros" class="tab-content">
+            <div class="about-container">
+                <nav class="about-index"></nav>
+                <div class="about-content"></div>
+                <div class="team-grid"></div>
+            </div>
+        </section>
+
+        <!-- Calendario Tab -->
+        <section id="calendario" class="tab-content">
+            <div class="calendar-container">
+                <div class="series-grid"></div>
+            </div>
+        </section>
+
+        <!-- Extra Tab -->
+        <section id="extra" class="tab-content">
+            <div class="extra-container">
+                <div class="social-links"></div>
+                <div class="contact-info"></div>
+                <div class="additional-modules"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+        </div>
+        <div class="footer-branding">
+            <p>&copy; 2025 NAI Project. Todos los derechos reservados.</p>
+        </div>
+        <div class="footer-contact">
+            <a href="mailto:contact@naiproject.com"><i class="fas fa-envelope"></i> contact@naiproject.com</a>
+        </div>
+    </footer>
+
+    <script src="js/global.js"></script>
+    <script src="js/tabs.js"></script>
+</body>
+</html>
