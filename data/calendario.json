@@ -1,42 +1,36 @@
 {
-    "Formula Argentina": [
+    "series": [
         {
-            "name": "Gran Premio de Buenos Aires",
-            "track": "Autódromo Oscar y Juan Gálvez",
-            "date": "2025-07-28T20:00:00"
+            "name": "Formula Argentina",
+            "icon": "fa-car-racing",
+            "color": "#ff0000",
+            "races": [
+                {
+                    "name": "Gran Premio de Argentina",
+                    "round": 5,
+                    "date": "2025-08-15T20:00:00-03:00",
+                    "track": "Buenos Aires"
+                },
+                {
+                    "name": "Gran Premio de Chile",
+                    "round": 6,
+                    "date": "2025-08-29T20:00:00-03:00",
+                    "track": "Santiago"
+                }
+            ]
         },
         {
-            "name": "Gran Premio de Córdoba",
-            "track": "Autódromo Oscar Cabalén",
-            "date": "2025-08-15T20:00:00"
-        }
-    ],
-    "GT Latam Series": [
-        {
-            "name": "6 Horas de Interlagos",
-            "track": "Autódromo José Carlos Pace",
-            "date": "2025-08-05T19:00:00"
-        }
-    ],
-    "Random Friday Races": [
-        {
-            "name": "Viernes de Clásicos",
-            "track": "Por definir",
-            "date": "2025-07-26T21:00:00"
-        }
-    ],
-    "LT Cup Series": [
-        {
-            "name": "Carrera Sprint Monza",
-            "track": "Autodromo Nazionale Monza",
-            "date": "2025-08-20T20:00:00"
-        }
-    ],
-    "Prototype Endurance Cup": [
-        {
-            "name": "12 Horas de Sebring",
-            "track": "Sebring International Raceway",
-            "date": "2025-09-01T14:00:00"
+            "name": "GT Latam Series",
+            "icon": "fa-car-side",
+            "color": "#00ff00",
+            "races": [
+                {
+                    "name": "6 Horas de México",
+                    "round": 3,
+                    "date": "2025-09-05T18:00:00-03:00",
+                    "track": "México City"
+                }
+            ]
         }
     ]
 }

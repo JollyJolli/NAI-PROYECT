@@ -1,9 +1,18 @@
 {
+    "banner": {
+        "videoUrl": "things/hero.mp4",
+        "altText": "SimRacingAmerica en acción"
+    },
+    "streamStatus": {
+        "isLive": false,
+        "twitchUrl": "https://twitch.tv/simracingamericatv"
+    },
     "nextRace": {
         "name": "Gran Premio de Argentina",
-        "round": "Ronda 5 - Temporada 2025",
-        "date": "2025-07-28T20:00:00",
-        "track": "Autódromo Oscar y Juan Gálvez"
-    },
-    "streamUrl": "https://twitch.tv/naiproject"
+        "series": "Formula Argentina",
+        "round": 5,
+        "date": "2025-08-15T20:00:00-03:00",
+        "track": "Autódromo Oscar y Juan Gálvez",
+        "location": "Buenos Aires, Argentina"
+    }
 }

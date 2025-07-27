@@ -1,47 +1,36 @@
 {
-    "index": [
-        {
-            "id": "nuestra-pasion",
-            "title": "Nuestra Pasión"
-        },
-        {
-            "id": "que-ofrecemos",
-            "title": "La Experiencia"
-        },
-        {
-            "id": "equipo",
-            "title": "Los Protagonistas"
-        }
-    ],
-    "sections": [
-        {
-            "id": "nuestra-pasion",
-            "title": "Nuestra Pasión",
-            "content": "<div class='passion-section'><p class='highlight-text'>🏎️ ¡BIENVENIDOS A LA MÁXIMA VELOCIDAD! 🏁</p><p class='racing-intro'>Aquí es donde la ADRENALINA se convierte en VICTORIA y donde cada MILISEGUNDO cuenta. No somos solo una comunidad de simracing, ¡SOMOS LA ÉLITE DEL AUTOMOVILISMO VIRTUAL LATINOAMERICANO!</p><p class='racing-spirit'>En nuestras venas corre GASOLINA PURA. Nacimos para revolucionar las carreras virtuales, para crear esas batallas épicas que te hacen saltar del asiento, esos momentos que hacen que tu corazón RUJA como un motor V12 a máximas revoluciones! 🔥</p><p class='racing-mission'>Cada evento es una batalla legendaria, cada vuelta una historia de superación, y cada adelantamiento... ¡PURA GLORIA! Esta es tu oportunidad de convertirte en leyenda. ¿Tienes lo que hace falta para estar entre los mejores?</p></div>"
-        },
-        {
-            "id": "que-ofrecemos",
-            "title": "La Experiencia",
-            "content": "<div class='experience-grid'><div class='experience-item'><i class='fas fa-trophy'></i><h3>¡COMPETENCIAS EXTREMAS!</h3><p>🏆 ¡Campeonatos al LÍMITE! Batallas rueda a rueda que te dejarán sin aliento. ¡Aquí se forjan las leyendas del simracing!</p></div><div class='experience-item'><i class='fas fa-broadcast-tower'></i><h3>¡TRANSMISIONES EXPLOSIVAS!</h3><p>🎙️ ¡Narradores que te hacen vivir cada segundo! Análisis técnico de nivel F1 y una producción que te dejará sin palabras</p></div><div class='experience-item'><i class='fas fa-fire'></i><h3>¡MÁXIMA INTENSIDAD!</h3><p>🔥 Donde cada carrera es una batalla épica. ¡Sin compromiso, sin miedo, solo PURA VELOCIDAD!</p></div><div class='experience-item'><i class='fas fa-rocket'></i><h3>¡INNOVACIÓN CONSTANTE!</h3><p>🚀 ¡Siempre un paso adelante! Tecnología de punta para que vivas la experiencia más realista del simracing</p></div></div>"
-        }
-    ],
+    "description": "Somos la principal plataforma de transmisión de simracing en América Latina",
+    "whoWeAre": {
+        "title": "¿Quiénes Somos?",
+        "content": "Un equipo apasionado por el automovilismo virtual, dedicado a llevar las mejores carreras a tu pantalla"
+    },
+    "whatWeOffer": {
+        "title": "¿Qué Ofrecemos?",
+        "services": [
+            "Transmisiones profesionales en vivo",
+            "Comentaristas expertos",
+            "Análisis técnico detallado",
+            "Múltiples campeonatos",
+            "Comunidad activa"
+        ]
+    },
     "team": [
         {
-            "name": "Juan Pérez",
+            "name": "Carlos Rodriguez",
             "role": "Director General",
-            "photo": "data/things/LOGO.png",
+            "photo": "things/LOGO.png",
             "social": {
-                "twitter": "https://twitter.com/juanperez",
-                "instagram": "https://instagram.com/juanperez"
+                "twitter": "@carlosR",
+                "instagram": "@carlos.simracing"
             }
         },
         {
-            "name": "María García",
+            "name": "Ana Martinez",
             "role": "Directora de Transmisión",
-            "photo": "data/things/LOGO.png",
+            "photo": "things/LOGO.png",
             "social": {
-                "twitter": "https://twitter.com/mariagarcia",
-                "instagram": "https://instagram.com/mariagarcia"
+                "twitter": "@anaM",
+                "instagram": "@ana.broadcast"
             }
         }
     ]
