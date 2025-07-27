@@ -3,28 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAI Project</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#006eff">
+    
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/global.css" as="style">
+    <link rel="preload" href="css/tabs.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="data/things/LOGO-with-name.png" as="image" fetchpriority="high">
+    <link rel="preload" href="data/things/hero.mp4" as="video" fetchpriority="high">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data/things/LOGO.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="data/things/LOGO.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="data/things/LOGO.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/tabs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <title>SimRacingAmericaTV</title>
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        "name": "SimRacingAmericaTV",
+        "url": "https://simracingamerica.tv",
+        "logo": "data/things/LOGO-with-name.png",
+        "sameAs": [
+            "https://twitter.com/simracingamerica",
+            "https://instagram.com/simracingamericatv",
+            "https://youtube.com/simracingamericatv"
+        ]
+    }
+    </script>
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="nav-logo">
-            <img src="data/things/LOGO-with-name.png" alt="Logo NAI">
-        </div>
-        <div class="nav-tabs">
-            <button class="tab-btn active" data-tab="inicio">Inicio</button>
-            <button class="tab-btn" data-tab="sobrenosotros">Sobre Nosotros</button>
-            <button class="tab-btn" data-tab="calendario">Calendario</button>
-            <button class="tab-btn" data-tab="extra">Extra</button>
-        </div>
-    </nav>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <img src="data/things/LOGO-with-name.png" alt="SimRacingAmericaTV Logo">
+            </div>
+            <ul class="nav-tabs">
+                <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="#sobrenosotros"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+                <li><a href="#calendario"><i class="fas fa-calendar-alt"></i> Calendario</a></li>
+                <li><a href="#extra"><i class="fas fa-plus-circle"></i> Extra</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         <!-- Inicio Tab -->
         <section id="inicio" class="tab-content active">
-            <div class="banner-container">
+            <div class="banner">
                 <video autoplay loop muted>
                     <source src="data/things/hero.mp4" type="video/mp4">
                 </video>
@@ -32,29 +88,32 @@
                     <span class="status-indicator"></span>
                     <span class="status-text">DESCONECTADO</span>
                 </div>
-                <a href="https://www.twitch.tv/simracingamericatv" class="twitch-button">
-                    <i class="fab fa-twitch"></i> Ver en Twitch
-                </a>
             </div>
+            
             <div class="next-race">
-                <h2>Próxima Carrera</h2>
-                <div class="race-info"></div>
-                <div class="countdown">
-                    <div class="countdown-item">
-                        <span class="days">00</span>
-                        <span class="label">Días</span>
+                <h2><i class="fas fa-flag-checkered"></i> Próxima Carrera</h2>
+                <div class="race-info">
+                    <div class="race-details">
+                        <h3 class="race-name">Cargando...</h3>
+                        <p class="race-round">Ronda: --</p>
                     </div>
-                    <div class="countdown-item">
-                        <span class="hours">00</span>
-                        <span class="label">Horas</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="minutes">00</span>
-                        <span class="label">Minutos</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="seconds">00</span>
-                        <span class="label">Segundos</span>
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span class="count days">00</span>
+                            <span class="label">Días</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="count hours">00</span>
+                            <span class="label">Horas</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="count minutes">00</span>
+                            <span class="label">Minutos</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="count seconds">00</span>
+                            <span class="label">Segundos</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,42 +121,128 @@
 
         <!-- Sobre Nosotros Tab -->
         <section id="sobrenosotros" class="tab-content">
-            <div class="about-container">
-                <nav class="about-index"></nav>
-                <div class="about-content"></div>
-                <div class="team-grid"></div>
+            <div class="about-content">
+                <div class="section-intro">
+                    <h2><i class="fas fa-info-circle"></i> ¿Quiénes Somos?</h2>
+                    <div class="content"></div>
+                </div>
+                
+                <div class="services">
+                    <h2><i class="fas fa-broadcast-tower"></i> ¿Qué Ofrecemos?</h2>
+                    <div class="content"></div>
+                </div>
+
+                <div class="team">
+                    <h2><i class="fas fa-users"></i> Nuestro Equipo</h2>
+                    <div class="team-grid"></div>
+                </div>
             </div>
         </section>
 
         <!-- Calendario Tab -->
         <section id="calendario" class="tab-content">
-            <div class="calendar-container">
-                <div class="series-grid"></div>
+            <div class="calendar-content">
+                <div class="calendar-search">
+                    <div class="search-filters">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="race-search" placeholder="Buscar carreras...">
+                        </div>
+                        <div class="filter-options">
+                            <div class="filter-group">
+                                <label><i class="fas fa-filter"></i> Series</label>
+                                <select id="series-filter">
+                                    <option value="all">Todas las Series</option>
+                                    <option value="formula">Formula Argentina</option>
+                                    <option value="gt">GT Latam Series</option>
+                                    <option value="friday">Random Friday Races</option>
+                                    <option value="lt">LT Cup Series</option>
+                                    <option value="prototype">Prototype Endurance Cup</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label><i class="fas fa-calendar"></i> Mes</label>
+                                <select id="month-filter">
+                                    <option value="all">Todos los Meses</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label><i class="fas fa-map-marker-alt"></i> Circuito</label>
+                                <select id="track-filter">
+                                    <option value="all">Todos los Circuitos</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="series-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Próximas Carreras</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Series Activas</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-route"></i>
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Circuitos</span>
+                    </div>
+                </div>
+
+                <div class="series-timeline">
+                    <div class="timeline-header">
+                        <h2><i class="fas fa-calendar-alt"></i> Próximas Carreras</h2>
+                        <div class="view-toggle">
+                            <button class="active" data-view="grid"><i class="fas fa-th"></i></button>
+                            <button data-view="list"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                    <div class="series-grid"></div>
+                </div>
+
+                <div class="featured-events">
+                    <h2><i class="fas fa-star"></i> Eventos Destacados</h2>
+                    <div class="featured-grid"></div>
+                </div>
             </div>
         </section>
 
         <!-- Extra Tab -->
         <section id="extra" class="tab-content">
-            <div class="extra-container">
-                <div class="social-links"></div>
-                <div class="contact-info"></div>
-                <div class="additional-modules"></div>
+            <div class="extra-content">
+                <div class="social-links">
+                    <h2><i class="fas fa-share-alt"></i> Redes Sociales</h2>
+                    <div class="social-grid"></div>
+                </div>
+                
+                <div class="contact-info">
+                    <h2><i class="fas fa-envelope"></i> Contacto</h2>
+                    <div class="contact-details"></div>
+                </div>
+
+                <div class="faq">
+                    <h2><i class="fas fa-question-circle"></i> Preguntas Frecuentes</h2>
+                    <div class="faq-grid"></div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
-        </div>
-        <div class="footer-branding">
-            <p>&copy; 2025 NAI Project. Todos los derechos reservados.</p>
-        </div>
-        <div class="footer-contact">
-            <a href="mailto:contact@naiproject.com"><i class="fas fa-envelope"></i> contact@naiproject.com</a>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+            </div>
+            <p class="copyright">© 2025 SimRacingAmericaTV. Todos los derechos reservados.</p>
         </div>
     </footer>
 

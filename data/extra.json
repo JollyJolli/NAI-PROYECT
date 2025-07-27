@@ -1,41 +1,24 @@
 {
-    "social": [
+    "faq": [
         {
-            "name": "Twitter",
-            "url": "https://twitter.com/naiproject",
-            "icon": "twitter"
+            "question": "¿Cómo puedo participar en las carreras?",
+            "answer": "Únete a nuestro Discord y sigue las instrucciones en el canal #inscripciones"
         },
         {
-            "name": "Instagram",
-            "url": "https://instagram.com/naiproject",
-            "icon": "instagram"
-        },
+            "question": "¿Qué simuladores usan?",
+            "answer": "Principalmente iRacing y Assetto Corsa Competizione"
+        }
+    ],
+    "usefulLinks": [
         {
             "name": "Discord",
-            "url": "https://discord.gg/naiproject",
-            "icon": "discord"
-        }
-    ],
-    "contact": [
-        {
-            "type": "email",
-            "value": "contacto@naiproject.com",
-            "icon": "fas fa-envelope"
+            "url": "https://discord.gg/simracingamerica",
+            "icon": "fa-discord"
         },
         {
-            "type": "discord",
-            "value": "discord.gg/naiproject",
-            "icon": "fab fa-discord"
-        }
-    ],
-    "additional": [
-        {
-            "title": "Preguntas Frecuentes",
-            "content": "<div class='faq'><h4>¿Cómo me uno a las carreras?</h4><p>Únete a nuestro Discord para más información.</p></div>"
-        },
-        {
-            "title": "Links Útiles",
-            "content": "<ul><li><a href='#'>Reglamento General</a></li><li><a href='#'>Guía para Novatos</a></li></ul>"
+            "name": "Reglamento",
+            "url": "/reglamento",
+            "icon": "fa-book"
         }
     ]
 }

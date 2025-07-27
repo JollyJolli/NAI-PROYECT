@@ -1,0 +1,29 @@
+{
+    "title": "SimRacingAmericaTV - Transmisiones de Carreras Virtuales en Latinoamérica",
+    "description": "La principal plataforma de simracing en América Latina. Transmisiones en vivo, campeonatos profesionales y comunidad activa de carreras virtuales.",
+    "keywords": [
+        "simracing",
+        "carreras virtuales",
+        "esports",
+        "motorsport",
+        "latinoamérica",
+        "transmisiones en vivo",
+        "iRacing",
+        "Assetto Corsa",
+        "competición virtual"
+    ],
+    "ogImage": "data/things/LOGO-with-name.png",
+    "twitterCard": "summary_large_image",
+    "themeColor": "#006eff",
+    "canonical": "https://simracingamerica.tv",
+    "alternateLanguages": [
+        {
+            "lang": "en",
+            "url": "https://simracingamerica.tv/en"
+        },
+        {
+            "lang": "pt",
+            "url": "https://simracingamerica.tv/pt"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "siteName": "SimRacingAmericaTV",
+    "description": "Tu destino para las mejores carreras virtuales en Latinoamérica",
+    "socialLinks": {
+        "twitch": "https://twitch.tv/simracingamericatv",
+        "twitter": "https://twitter.com/simracingamerica",
+        "instagram": "https://instagram.com/simracingamericatv",
+        "youtube": "https://youtube.com/simracingamericatv"
+    },
+    "contact": {
+        "email": "contacto@simracingamerica.tv",
+        "discord": "discord.gg/simracingamerica"
+    }
+}
