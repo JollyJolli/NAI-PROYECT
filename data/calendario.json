@@ -1,36 +1,157 @@
 {
     "series": [
         {
+            "id": "formula",
             "name": "Formula Argentina",
             "icon": "fa-car-racing",
             "color": "#ff0000",
+            "description": "La máxima categoría del automovilismo virtual latinoamericano",
             "races": [
                 {
+                    "id": "arg-gp",
                     "name": "Gran Premio de Argentina",
                     "round": 5,
                     "date": "2025-08-15T20:00:00-03:00",
-                    "track": "Buenos Aires"
+                    "track": "Autódromo Oscar y Juan Gálvez",
+                    "location": "Buenos Aires, Argentina",
+                    "distance": "305km",
+                    "laps": 71,
+                    "featured": true,
+                    "status": "upcoming",
+                    "trackType": "permanent",
+                    "difficulty": 4,
+                    "weather": "variable"
                 },
                 {
+                    "id": "chi-gp",
                     "name": "Gran Premio de Chile",
                     "round": 6,
                     "date": "2025-08-29T20:00:00-03:00",
-                    "track": "Santiago"
+                    "track": "Autódromo Internacional de Codegua",
+                    "location": "Santiago, Chile",
+                    "distance": "290km",
+                    "laps": 65,
+                    "featured": false,
+                    "status": "upcoming",
+                    "trackType": "permanent",
+                    "difficulty": 3,
+                    "weather": "soleado"
                 }
             ]
         },
         {
+            "id": "gt",
             "name": "GT Latam Series",
             "icon": "fa-car-side",
             "color": "#00ff00",
+            "description": "Campeonato de resistencia con los mejores GT3 del continente",
             "races": [
                 {
+                    "id": "mex-6h",
                     "name": "6 Horas de México",
                     "round": 3,
                     "date": "2025-09-05T18:00:00-03:00",
-                    "track": "México City"
+                    "track": "Autódromo Hermanos Rodríguez",
+                    "location": "Ciudad de México, México",
+                    "distance": "1000km",
+                    "duration": "6h",
+                    "featured": true,
+                    "status": "upcoming",
+                    "trackType": "permanent",
+                    "difficulty": 5,
+                    "weather": "variable"
+                }
+            ]
+        },
+        {
+            "id": "friday",
+            "name": "Random Friday Races",
+            "icon": "fa-dice",
+            "color": "#9933ff",
+            "description": "Carreras especiales todos los viernes con formatos únicos",
+            "races": [
+                {
+                    "id": "fri-spec",
+                    "name": "Especial Multi-Clase",
+                    "round": 1,
+                    "date": "2025-08-02T21:00:00-03:00",
+                    "track": "Interlagos",
+                    "location": "São Paulo, Brasil",
+                    "distance": "200km",
+                    "laps": 45,
+                    "featured": false,
+                    "status": "upcoming",
+                    "trackType": "permanent",
+                    "difficulty": 4,
+                    "weather": "soleado"
+                }
+            ]
+        },
+        {
+            "id": "lt",
+            "name": "LT Cup Series",
+            "icon": "fa-trophy",
+            "color": "#ff9900",
+            "description": "Copa monomarca para pilotos novatos",
+            "races": [
+                {
+                    "id": "lt-round1",
+                    "name": "Apertura LT Cup",
+                    "round": 1,
+                    "date": "2025-08-10T19:00:00-03:00",
+                    "track": "Circuito de Potrero de los Funes",
+                    "location": "San Luis, Argentina",
+                    "distance": "150km",
+                    "laps": 35,
+                    "featured": false,
+                    "status": "upcoming",
+                    "trackType": "street",
+                    "difficulty": 3,
+                    "weather": "soleado"
+                }
+            ]
+        },
+        {
+            "id": "prototype",
+            "name": "Prototype Endurance Cup",
+            "icon": "fa-bolt",
+            "color": "#3366ff",
+            "description": "Campeonato de resistencia con prototipos LMP2",
+            "races": [
+                {
+                    "id": "pec-12h",
+                    "name": "12 Horas de Brasília",
+                    "round": 1,
+                    "date": "2025-09-20T08:00:00-03:00",
+                    "track": "Autódromo Internacional Nelson Piquet",
+                    "location": "Brasília, Brasil",
+                    "distance": "2000km",
+                    "duration": "12h",
+                    "featured": true,
+                    "status": "upcoming",
+                    "trackType": "permanent",
+                    "difficulty": 5,
+                    "weather": "variable"
                 }
             ]
         }
-    ]
+    ],
+    "stats": {
+        "totalRaces": 6,
+        "activeSeries": 5,
+        "uniqueTracks": 6
+    },
+    "filters": {
+        "months": ["Agosto", "Septiembre"],
+        "tracks": [
+            "Autódromo Oscar y Juan Gálvez",
+            "Autódromo Internacional de Codegua",
+            "Autódromo Hermanos Rodríguez",
+            "Interlagos",
+            "Circuito de Potrero de los Funes",
+            "Autódromo Internacional Nelson Piquet"
+        ],
+        "difficulties": [1, 2, 3, 4, 5],
+        "types": ["permanent", "street"]
+    }
 }

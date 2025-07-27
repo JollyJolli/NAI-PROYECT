@@ -3,10 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimRacingAmericaTV</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#006eff">
+    
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preconnect to External Resources -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="css/global.css" as="style">
+    <link rel="preload" href="css/tabs.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="data/things/LOGO-with-name.png" as="image" fetchpriority="high">
+    <link rel="preload" href="data/things/hero.mp4" as="video" fetchpriority="high">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data/things/LOGO.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="data/things/LOGO.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="data/things/LOGO.png">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/tabs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <title>SimRacingAmericaTV</title>
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        "name": "SimRacingAmericaTV",
+        "url": "https://simracingamerica.tv",
+        "logo": "data/things/LOGO-with-name.png",
+        "sameAs": [
+            "https://twitter.com/simracingamerica",
+            "https://instagram.com/simracingamericatv",
+            "https://youtube.com/simracingamericatv"
+        ]
+    }
+    </script>
 </head>
 <body>
     <header>
@@ -88,7 +142,73 @@
         <!-- Calendario Tab -->
         <section id="calendario" class="tab-content">
             <div class="calendar-content">
-                <div class="series-grid"></div>
+                <div class="calendar-search">
+                    <div class="search-filters">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="race-search" placeholder="Buscar carreras...">
+                        </div>
+                        <div class="filter-options">
+                            <div class="filter-group">
+                                <label><i class="fas fa-filter"></i> Series</label>
+                                <select id="series-filter">
+                                    <option value="all">Todas las Series</option>
+                                    <option value="formula">Formula Argentina</option>
+                                    <option value="gt">GT Latam Series</option>
+                                    <option value="friday">Random Friday Races</option>
+                                    <option value="lt">LT Cup Series</option>
+                                    <option value="prototype">Prototype Endurance Cup</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label><i class="fas fa-calendar"></i> Mes</label>
+                                <select id="month-filter">
+                                    <option value="all">Todos los Meses</option>
+                                </select>
+                            </div>
+                            <div class="filter-group">
+                                <label><i class="fas fa-map-marker-alt"></i> Circuito</label>
+                                <select id="track-filter">
+                                    <option value="all">Todos los Circuitos</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="series-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Próximas Carreras</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-trophy"></i>
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Series Activas</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-route"></i>
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Circuitos</span>
+                    </div>
+                </div>
+
+                <div class="series-timeline">
+                    <div class="timeline-header">
+                        <h2><i class="fas fa-calendar-alt"></i> Próximas Carreras</h2>
+                        <div class="view-toggle">
+                            <button class="active" data-view="grid"><i class="fas fa-th"></i></button>
+                            <button data-view="list"><i class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                    <div class="series-grid"></div>
+                </div>
+
+                <div class="featured-events">
+                    <h2><i class="fas fa-star"></i> Eventos Destacados</h2>
+                    <div class="featured-grid"></div>
+                </div>
             </div>
         </section>
 

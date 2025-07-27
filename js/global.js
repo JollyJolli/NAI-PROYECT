@@ -1,6 +1,30 @@
 // Global state
 let config = null;
+let seoConfig = null;
 let currentTab = 'inicio';
+
+// Performance monitoring
+const performanceMetrics = {
+    startTime: Date.now(),
+    firstContentPaint: 0,
+    contentLoaded: 0,
+    
+    measure(label) {
+        this[label] = Date.now() - this.startTime;
+        console.debug(`Performance [${label}]:`, this[label] + 'ms');
+    }
+};
+
+// Intersection Observer for lazy loading
+const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            observer.unobserve(img);
+        }
+    });
+});
 
 // Cache DOM elements
 const streamStatus = document.querySelector('.stream-status');
