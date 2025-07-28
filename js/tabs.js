@@ -233,13 +233,16 @@ function loadAboutContent(data) {
                     socialLinksHTML += '</div>';
                 }
                 
-                const flag = countryFlags[member.country] || '🌍';
+                const countryText = member.country || 'Internacional';
                 
                 teamHTML += `
                     <div class="team-member-compact">
                         <img src="${member.photo}" alt="${member.name}" loading="lazy" class="member-photo-compact">
                         <div class="member-info-compact">
-                            <h3>${member.name} ${flag}</h3>
+                            <div class="member-details">
+                                <h3>${member.name}</h3>
+                                <p class="country-text">${countryText}</p>
+                            </div>
                             ${socialLinksHTML}
                         </div>
                     </div>
@@ -266,12 +269,13 @@ function loadAboutContent(data) {
                     socialLinksHTML += '</div>';
                 }
                 
-                const flag = countryFlags[member.country] || '🌍';
+                const countryText = member.country || 'Internacional';
                 
                 teamHTML += `
                     <div class="team-member">
                         <img src="${member.photo}" alt="${member.name}" loading="lazy">
-                        <h3>${member.name} ${flag}</h3>
+                        <h3>${member.name}</h3>
+                        <p class="country-text">${countryText}</p>
                         <p class="role">${member.role || 'Miembro del Equipo'}</p>
                         ${socialLinksHTML}
                     </div>
