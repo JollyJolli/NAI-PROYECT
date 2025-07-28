@@ -130,11 +130,70 @@ async function loadSponsorsScroller() {
     }
 }
 
+// Mobile menu functionality
+function initMobileMenu() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navTabs = document.querySelector('.nav-tabs');
+    const navLinks = document.querySelectorAll('.nav-tabs a');
+    
+    if (!mobileMenuToggle || !navTabs) return;
+    
+    // Toggle mobile menu
+    mobileMenuToggle.addEventListener('click', () => {
+        const isActive = navTabs.classList.contains('active');
+        
+        if (isActive) {
+            navTabs.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        } else {
+            navTabs.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            mobileMenuToggle.querySelector('i').className = 'fas fa-times';
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        }
+    });
+    
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navTabs.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!mobileMenuToggle.contains(e.target) && !navTabs.contains(e.target)) {
+            navTabs.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            navTabs.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.querySelector('i').className = 'fas fa-bars';
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
+
 // Initialize the application
 async function init() {
     await loadConfig();
     checkStreamStatus();
     setInterval(checkStreamStatus, 60000); // Check stream status every minute
+
+    // Initialize mobile menu
+    initMobileMenu();
 
     // Load sponsors scroller
     await loadSponsorsScroller();

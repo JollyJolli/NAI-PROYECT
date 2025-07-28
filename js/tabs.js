@@ -330,6 +330,8 @@ function initializeFilters(filters) {
 
 function updateSeriesGrid(series) {
     const seriesGrid = document.querySelector('.series-grid');
+    const isListView = seriesGrid.classList.contains('list-view');
+    
     seriesGrid.innerHTML = series
         .map(series => `
             <div class="series-card" style="border-left: 4px solid ${series.color}" data-series="${series.id}">
@@ -337,7 +339,7 @@ function updateSeriesGrid(series) {
                     <i class="fas ${series.icon} series-icon"></i>
                     <h3>${series.name}</h3>
                 </div>
-                <p class="series-description">${series.description}</p>
+                ${!isListView ? `<p class="series-description">${series.description}</p>` : ''}
                 <div class="races-list">
                     ${series.races.map(race => `
                         <div class="race-item" data-track="${race.track.toLowerCase()}" data-date="${race.date}">
@@ -346,16 +348,24 @@ function updateSeriesGrid(series) {
                                 ${race.featured ? '<span class="featured-badge"><i class="fas fa-star"></i> Destacado</span>' : ''}
                             </div>
                             <div class="race-details">
-                                <p><i class="fas fa-flag-checkered"></i> Ronda ${race.round}</p>
-                                <p><i class="fas fa-calendar"></i> ${formatDate(race.date)}</p>
-                                <p><i class="fas fa-map-marker-alt"></i> ${race.track}</p>
-                                <p><i class="fas fa-location-dot"></i> ${race.location}</p>
-                                ${race.duration ? 
-                                    `<p><i class="fas fa-clock"></i> ${race.duration}</p>` :
-                                    `<p><i class="fas fa-route"></i> ${race.distance} (${race.laps} vueltas)</p>`
-                                }
-                                <p><i class="fas fa-gauge-high"></i> Dificultad: ${'★'.repeat(race.difficulty)}${'☆'.repeat(5-race.difficulty)}</p>
-                                <p><i class="fas fa-cloud"></i> Clima: ${race.weather}</p>
+                                ${isListView ? `
+                                    <div class="race-primary-info">
+                                        <p class="race-date"><i class="fas fa-calendar"></i> ${formatDateShort(race.date)}</p>
+                                        <p class="race-track"><i class="fas fa-map-marker-alt"></i> ${race.track}</p>
+                                        <p class="race-round"><i class="fas fa-flag-checkered"></i> R${race.round}</p>
+                                    </div>
+                                ` : `
+                                    <p><i class="fas fa-flag-checkered"></i> Ronda ${race.round}</p>
+                                    <p><i class="fas fa-calendar"></i> ${formatDate(race.date)}</p>
+                                    <p><i class="fas fa-map-marker-alt"></i> ${race.track}</p>
+                                    <p><i class="fas fa-location-dot"></i> ${race.location}</p>
+                                    ${race.duration ? 
+                                        `<p><i class="fas fa-clock"></i> ${race.duration}</p>` :
+                                        `<p><i class="fas fa-route"></i> ${race.distance} (${race.laps} vueltas)</p>`
+                                    }
+                                    <p><i class="fas fa-gauge-high"></i> Dificultad: ${'★'.repeat(race.difficulty)}${'☆'.repeat(5-race.difficulty)}</p>
+                                    <p><i class="fas fa-cloud"></i> Clima: ${race.weather}</p>
+                                `}
                             </div>
                         </div>
                     `).join('')}
@@ -438,6 +448,11 @@ function handleViewToggle(e) {
         // Restaurar vista de grid
         seriesGrid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
     }
+    
+    // Recargar el contenido para aplicar los cambios de vista
+    if (calendarData) {
+        filterRaces();
+    }
 }
 
 // Función manejadora de búsqueda y filtros
@@ -501,6 +516,16 @@ function formatDate(dateString) {
         weekday: 'long', 
         year: 'numeric', 
         month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+}
+
+function formatDateShort(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleString('es', { 
+        month: 'short', 
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit'
