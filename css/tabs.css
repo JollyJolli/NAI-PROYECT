@@ -175,54 +175,149 @@
     min-width: 20px;
 }
 
-/* Team grid */
+/* Team grid - Enhanced Design */
 .team-grid {
+    margin-top: 3rem;
+}
+
+.department-section {
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.department-title {
+    font-size: 2.2rem;
+    color: var(--primary-blue);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.department-title::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), #00d4ff);
+    border-radius: 2px;
+}
+
+.department-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--primary-blue);
+    border-radius: 1px;
+}
+
+.department-members {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 0 1rem;
 }
 
 .team-member {
-    background: var(--darker-bg);
-    border-radius: 12px;
-    padding: 2rem;
+    background: linear-gradient(145deg, var(--darker-bg), rgba(0, 110, 255, 0.05));
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
     text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid rgba(0, 110, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 110, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.team-member:hover::before {
+    left: 100%;
 }
 
 .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 110, 255, 0.2);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 110, 255, 0.3), 0 0 20px rgba(0, 110, 255, 0.1);
+    border-color: var(--primary-blue);
 }
 
 .team-member img {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     margin-bottom: 1.5rem;
-    border: 3px solid var(--primary-blue);
+    border: 4px solid var(--primary-blue);
     object-fit: cover;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 110, 255, 0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.team-member:hover img {
+    transform: scale(1.1);
+    border-color: #00d4ff;
+    box-shadow: 0 12px 35px rgba(0, 212, 255, 0.4);
 }
 
 .team-member h3 {
     color: var(--white);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .team-member .role {
     color: var(--primary-blue);
-    font-weight: 500;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+}
+
+.team-member .country {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
 }
 
 .team-member .social-links {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 0.8rem;
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    padding: 0 10px;
 }
 
 .team-member .social-link {
@@ -232,15 +327,237 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--primary-blue);
+    background: linear-gradient(135deg, var(--primary-blue), #00d4ff);
     color: var(--white);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0, 110, 255, 0.3);
+    flex-shrink: 0;
+    font-size: 0.9rem;
 }
 
 .team-member .social-link:hover {
-    background: var(--accent-hover);
+    background: linear-gradient(135deg, #00d4ff, var(--primary-blue));
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+}
+
+/* Responsive adjustments for social links */
+@media (max-width: 768px) {
+    .team-member .social-links {
+        gap: 0.6rem;
+        padding: 0 5px;
+    }
+    
+    .team-member .social-link {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member .social-links {
+        gap: 0.4rem;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .team-member .social-link {
+        width: 30px;
+        height: 30px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Special handling for members with many social links */
+.team-member .social-links:has(> .social-link:nth-child(6)) {
+    gap: 0.5rem;
+}
+
+.team-member .social-links:has(> .social-link:nth-child(6)) .social-link {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+}
+
+.team-member .social-links:has(> .social-link:nth-child(10)) {
+    gap: 0.3rem;
+    justify-content: center;
+}
+
+.team-member .social-links:has(> .social-link:nth-child(10)) .social-link {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+}
+
+/* Special styling for Development team members */
+.department-section:has(.department-title:contains("Desarrollo")) .team-member,
+.department-section:has(.department-title:contains("Development")) .team-member {
+    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member::before,
+.department-section:has(.department-title:contains("Development")) .team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #00d4ff, #667eea, #764ba2, #f093fb);
+    background-size: 400% 400%;
+    animation: gradientShift 4s ease infinite;
+    z-index: -1;
+    border-radius: inherit;
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member::after,
+.department-section:has(.department-title:contains("Development")) .team-member::after {
+    content: '{ }';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    color: #00d4ff;
+    opacity: 0.3;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member:hover::after,
+.department-section:has(.department-title:contains("Development")) .team-member:hover::after {
+    opacity: 0.8;
     transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member img,
+.department-section:has(.department-title:contains("Development")) .team-member img {
+    border: 3px solid #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member h3,
+.department-section:has(.department-title:contains("Development")) .team-member h3 {
+    background: linear-gradient(45deg, #00d4ff, #667eea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member .role,
+.department-section:has(.department-title:contains("Development")) .team-member .role {
+    color: #00d4ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member .social-link,
+.department-section:has(.department-title:contains("Development")) .team-member .social-link {
+    background: linear-gradient(135deg, #00d4ff 0%, #667eea 100%);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member .social-link:hover,
+.department-section:has(.department-title:contains("Development")) .team-member .social-link:hover {
+    background: linear-gradient(135deg, #667eea 0%, #00d4ff 100%);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.5);
+    transform: translateY(-3px) scale(1.15);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Additional developer card enhancements */
+.department-section:has(.department-title:contains("Desarrollo")) .team-member:hover,
+.department-section:has(.department-title:contains("Development")) .team-member:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3), 0 0 30px rgba(102, 126, 234, 0.2);
+}
+
+/* Code-like decoration for developers */
+.department-section:has(.department-title:contains("Desarrollo")) .team-member .country::before,
+.department-section:has(.department-title:contains("Development")) .team-member .country::before {
+    content: '// ';
+    font-family: 'Courier New', monospace;
+    color: #00d4ff;
+    opacity: 0.7;
+}
+
+.department-section:has(.department-title:contains("Desarrollo")) .team-member .country,
+.department-section:has(.department-title:contains("Development")) .team-member .country {
+    font-family: 'Courier New', monospace;
+    color: #a0a0a0;
+    font-size: 0.9rem;
+}
+
+/* Glowing border effect on hover */
+.department-section:has(.department-title:contains("Desarrollo")) .team-member:hover::before,
+.department-section:has(.department-title:contains("Development")) .team-member:hover::before {
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.6), inset 0 0 30px rgba(102, 126, 234, 0.3);
+}
+
+/* Terminal-like styling for developer names */
+.department-section:has(.department-title:contains("Desarrollo")) .team-member h3::before,
+.department-section:has(.department-title:contains("Development")) .team-member h3::before {
+    content: '$ ';
+    font-family: 'Courier New', monospace;
+    color: #00d4ff;
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments for developer cards */
+@media (max-width: 768px) {
+    .department-section:has(.department-title:contains("Desarrollo")) .team-member::after,
+    .department-section:has(.department-title:contains("Development")) .team-member::after {
+        font-size: 1rem;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .department-section:has(.department-title:contains("Desarrollo")) .team-member h3::before,
+    .department-section:has(.department-title:contains("Development")) .team-member h3::before {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .department-section:has(.department-title:contains("Desarrollo")) .team-member::after,
+    .department-section:has(.department-title:contains("Development")) .team-member::after {
+        display: none;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .department-members {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .department-title {
+        font-size: 1.8rem;
+    }
+    
+    .team-member {
+        padding: 2rem 1.5rem;
+    }
 }
 
 /* Calendario Tab */

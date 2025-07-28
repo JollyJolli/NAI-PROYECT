@@ -27,13 +27,24 @@
                     "name": "Naitly Frei",
                     "role": "Fundador y Director General",
                     "country": "Alemania",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitter", "url": "https://twitter.com/naitlyfrei", "icon": "fab fa-twitter"},
+                        {"platform": "twitch", "url": "https://twitch.tv/naitlyfrei", "icon": "fab fa-twitch"},
+                        {"platform": "youtube", "url": "https://youtube.com/@naitlyfrei", "icon": "fab fa-youtube"},
+                        {"platform": "instagram", "url": "https://instagram.com/naitlyfrei", "icon": "fab fa-instagram"},
+                        {"platform": "discord", "url": "https://discord.gg/naitly", "icon": "fab fa-discord"}
+                    ]
                 },
                 {
                     "name": "Kiro Victorio",
                     "role": "Co-Director y Coordinador",
                     "country": "México",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitch", "url": "https://twitch.tv/kirovictorio", "icon": "fab fa-twitch"},
+                        {"platform": "twitter", "url": "https://twitter.com/kirovictorio", "icon": "fab fa-twitter"}
+                    ]
                 }
             ]
         },
@@ -43,52 +54,97 @@
                 {
                     "name": "Salchicho Galindo",
                     "country": "México",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitch", "url": "https://twitch.tv/salchichogalindo", "icon": "fab fa-twitch"},
+                        {"platform": "youtube", "url": "https://youtube.com/@salchichogalindo", "icon": "fab fa-youtube"},
+                        {"platform": "twitter", "url": "https://twitter.com/salchichogalindo", "icon": "fab fa-twitter"},
+                        {"platform": "instagram", "url": "https://instagram.com/salchichogalindo", "icon": "fab fa-instagram"},
+                        {"platform": "tiktok", "url": "https://tiktok.com/@salchichogalindo", "icon": "fab fa-tiktok"},
+                        {"platform": "facebook", "url": "https://facebook.com/salchichogalindo", "icon": "fab fa-facebook"}
+                    ]
                 },
                 {
                     "name": "Sol Gooda",
                     "country": "Venezuela",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitch", "url": "https://twitch.tv/solgooda", "icon": "fab fa-twitch"}
+                    ]
                 },
                 {
                     "name": "Chemantm",
                     "country": "México",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": []
                 },
                 {
                     "name": "Álvaro Gutiérrez",
                     "country": "Perú",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "youtube", "url": "https://youtube.com/@alvarogutierrez", "icon": "fab fa-youtube"},
+                        {"platform": "twitter", "url": "https://twitter.com/alvarogutierrez", "icon": "fab fa-twitter"},
+                        {"platform": "instagram", "url": "https://instagram.com/alvarogutierrez", "icon": "fab fa-instagram"},
+                        {"platform": "discord", "url": "https://discord.gg/alvaro", "icon": "fab fa-discord"}
+                    ]
                 },
                 {
                     "name": "Hernán Arteaga",
                     "country": "Colombia",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitch", "url": "https://twitch.tv/hernanarteaga", "icon": "fab fa-twitch"},
+                        {"platform": "twitter", "url": "https://twitter.com/hernanarteaga", "icon": "fab fa-twitter"},
+                        {"platform": "youtube", "url": "https://youtube.com/@hernanarteaga", "icon": "fab fa-youtube"}
+                    ]
                 },
                 {
                     "name": "Miguel Monsa",
                     "country": "Colombia",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "instagram", "url": "https://instagram.com/miguelmonsa", "icon": "fab fa-instagram"},
+                        {"platform": "tiktok", "url": "https://tiktok.com/@miguelmonsa", "icon": "fab fa-tiktok"}
+                    ]
                 },
                 {
                     "name": "Gabriel Galax",
                     "country": "Chile",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": []
                 },
                 {
                     "name": "Dest Takahashi",
                     "country": "Uruguay",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitch", "url": "https://twitch.tv/desttakahashi", "icon": "fab fa-twitch"},
+                        {"platform": "youtube", "url": "https://youtube.com/@desttakahashi", "icon": "fab fa-youtube"},
+                        {"platform": "twitter", "url": "https://twitter.com/desttakahashi", "icon": "fab fa-twitter"},
+                        {"platform": "instagram", "url": "https://instagram.com/desttakahashi", "icon": "fab fa-instagram"},
+                        {"platform": "discord", "url": "https://discord.gg/dest", "icon": "fab fa-discord"},
+                        {"platform": "facebook", "url": "https://facebook.com/desttakahashi", "icon": "fab fa-facebook"},
+                        {"platform": "tiktok", "url": "https://tiktok.com/@desttakahashi", "icon": "fab fa-tiktok"}
+                    ]
                 },
                 {
                     "name": "Juan Francisco",
                     "country": "Argentina",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitter", "url": "https://twitter.com/juanfrancisco", "icon": "fab fa-twitter"}
+                    ]
                 },
                 {
                     "name": "Tuko Gómez",
                     "country": "Argentina",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitch", "url": "https://twitch.tv/tukogomez", "icon": "fab fa-twitch"},
+                        {"platform": "youtube", "url": "https://youtube.com/@tukogomez", "icon": "fab fa-youtube"},
+                        {"platform": "instagram", "url": "https://instagram.com/tukogomez", "icon": "fab fa-instagram"}
+                    ]
                 }
             ]
         },
@@ -98,12 +154,22 @@
                 {
                     "name": "Jossel Ortiz",
                     "country": "Colombia",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "instagram", "url": "https://instagram.com/josselortiz", "icon": "fab fa-instagram"},
+                        {"platform": "twitter", "url": "https://twitter.com/josselortiz", "icon": "fab fa-twitter"},
+                        {"platform": "linkedin", "url": "https://linkedin.com/in/josselortiz", "icon": "fab fa-linkedin"},
+                        {"platform": "facebook", "url": "https://facebook.com/josselortiz", "icon": "fab fa-facebook"}
+                    ]
                 },
                 {
                     "name": "Jerónimo Avedaño",
                     "country": "Argentina",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "twitter", "url": "https://twitter.com/jeronimoavedano", "icon": "fab fa-twitter"},
+                        {"platform": "linkedin", "url": "https://linkedin.com/in/jeronimoavedano", "icon": "fab fa-linkedin"}
+                    ]
                 }
             ]
         },
@@ -113,7 +179,12 @@
                 {
                     "name": "Andres Formen",
                     "country": "Brasil",
-                    "photo": "data/things/LOGO.png"
+                    "photo": "data/things/LOGO.png",
+                    "socialNetworks": [
+                        {"platform": "github", "url": "https://github.com/jollyjolli", "icon": "fab fa-github"},
+                        {"platform": "instagram", "url": "https://instagram.com/formen.aa", "icon": "fab fa-instagram"},
+                        {"platform": "twitter", "url": "https://twitter.com/kuikilod", "icon": "fab fa-twitter"}
+                    ]
                 }
             ]
         }

@@ -200,16 +200,31 @@ function loadAboutContent(data) {
     
     Object.values(data.team).forEach(department => {
         teamHTML += `<div class="department-section">`;
-        teamHTML += `<h3 class="department-title">${department.title}</h3>`;
+        teamHTML += `<h2 class="department-title">${department.title}</h2>`;
         teamHTML += `<div class="department-members">`;
         
         department.members.forEach(member => {
+            let socialLinksHTML = '';
+            
+            if (member.socialNetworks && member.socialNetworks.length > 0) {
+                socialLinksHTML = '<div class="social-links">';
+                member.socialNetworks.forEach(social => {
+                    socialLinksHTML += `
+                        <a href="${social.url}" class="social-link" title="${social.platform}" target="_blank" rel="noopener noreferrer">
+                            <i class="${social.icon}"></i>
+                        </a>
+                    `;
+                });
+                socialLinksHTML += '</div>';
+            }
+            
             teamHTML += `
-                <div class="team-member card">
-                    <img src="${member.photo}" alt="${member.name}">
+                <div class="team-member">
+                    <img src="${member.photo}" alt="${member.name}" loading="lazy">
                     <h3>${member.name}</h3>
-                    <p class="role">${member.role || member.country}</p>
+                    <p class="role">${member.role || 'Miembro del Equipo'}</p>
                     <p class="country">${member.country}</p>
+                    ${socialLinksHTML}
                 </div>
             `;
         });
