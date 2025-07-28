@@ -18,7 +18,7 @@
         {
             "name": "Carlos Rodriguez",
             "role": "Director General",
-            "photo": "things/LOGO.png",
+            "photo": "data/things/LOGO.png",
             "social": {
                 "twitter": "@carlosR",
                 "instagram": "@carlos.simracing"
@@ -32,6 +32,84 @@
                 "twitter": "@anaM",
                 "instagram": "@ana.broadcast"
             }
+        }
+    ],
+    "contactMethods": [
+        {
+            "name": "Discord",
+            "description": "Únete a nuestra comunidad principal",
+            "url": "https://discord.gg/simracingamerica",
+            "icon": "fab fa-discord"
+        },
+        {
+            "name": "Email",
+            "description": "Contáctanos directamente",
+            "url": "mailto:simracingamericatv@gmail.com",
+            "icon": "fas fa-envelope"
+        }
+    ],
+    "socialNetworks": [
+        {
+            "name": "Twitch",
+            "username": "@simracingamericatv",
+            "url": "https://twitch.tv/simracingamericatv",
+            "icon": "fab fa-twitch",
+            "followers": "15.2K"
+        },
+        {
+            "name": "YouTube",
+            "username": "@SimRacingAmericaTV",
+            "url": "https://youtube.com/@SimRacingAmericaTV",
+            "icon": "fab fa-youtube",
+            "followers": "8.7K"
+        },
+        {
+            "name": "Twitter",
+            "username": "@SimRacingAmerica",
+            "url": "https://twitter.com/SimRacingAmerica",
+            "icon": "fab fa-twitter",
+            "followers": "12.1K"
+        },
+        {
+            "name": "Instagram",
+            "username": "@simracingamerica",
+            "url": "https://instagram.com/simracingamerica",
+            "icon": "fab fa-instagram",
+            "followers": "5.8K"
+        },
+        {
+            "name": "Discord",
+            "username": "SimRacingAmerica",
+            "url": "https://discord.gg/simracingamerica",
+            "icon": "fab fa-discord",
+            "followers": "3.2K"
+        },
+        {
+            "name": "TikTok",
+            "username": "@simracingamerica",
+            "url": "https://tiktok.com/@simracingamerica",
+            "icon": "fab fa-tiktok",
+            "followers": "2.1K"
+        }
+    ],
+    "sponsors": [
+        {
+            "name": "Instant Gaming",
+            "logo": "data/things/sponsors/INSTANT-GAMING.webp",
+            "website": "https://www.instant-gaming.com",
+            "description": "Plataforma líder en venta de videojuegos digitales"
+        },
+        {
+            "name": "Simufy",
+            "logo": "data/things/sponsors/SIMUFY.webp",
+            "website": "https://www.simufy.com",
+            "description": "Especialistas en hardware para simulación"
+        },
+        {
+            "name": "VexyHost",
+            "logo": "data/things/sponsors/VEXYHOST.webp",
+            "website": "https://www.vexyhost.com",
+            "description": "Servicios de hosting y servidores gaming"
         }
     ]
 }

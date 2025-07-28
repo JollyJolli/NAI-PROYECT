@@ -1,17 +1,70 @@
 {
-    "faq": [
+    "leagues": [
         {
-            "question": "¿Cómo puedo participar en las carreras?",
-            "answer": "Únete a nuestro Discord y sigue las instrucciones en el canal #inscripciones"
+            "id": "formula",
+            "name": "Formula Argentina",
+            "logo": "data/things/LOGO.png",
+            "discord": "https://discord.gg/formula-argentina",
+            "social": {
+                "twitter": "https://twitter.com/formula_arg",
+                "instagram": "https://instagram.com/formula_argentina",
+                "youtube": "https://youtube.com/formula-argentina"
+            }
         },
         {
-            "question": "¿Qué simuladores usan?",
-            "answer": "Principalmente iRacing y Assetto Corsa Competizione"
+            "id": "gt",
+            "name": "GT Latam Series",
+            "logo": "data/things/LOGO.png",
+            "discord": "https://discord.gg/gt-latam",
+            "social": {
+                "twitter": "https://twitter.com/gt_latam",
+                "instagram": "https://instagram.com/gt_latam_series"
+            }
+        },
+        {
+            "id": "friday",
+            "name": "Random Friday Races",
+            "logo": "data/things/LOGO.png",
+            "discord": "https://discord.gg/friday-races",
+            "social": {
+                "discord": "https://discord.gg/friday-races"
+            }
+        },
+        {
+            "id": "lt",
+            "name": "LT Cup Series",
+            "logo": "data/things/LOGO.png",
+            "discord": "https://discord.gg/lt-cup",
+            "social": {
+                "twitter": "https://twitter.com/lt_cup",
+                "instagram": "https://instagram.com/lt_cup_series",
+                "youtube": "https://youtube.com/lt-cup",
+                "facebook": "https://facebook.com/lt.cup.series",
+                "twitch": "https://twitch.tv/lt_cup"
+            }
+        },
+        {
+            "id": "prototype",
+            "name": "Prototype Endurance Cup",
+            "logo": "data/things/LOGO.png",
+            "discord": "https://discord.gg/prototype-endurance",
+            "social": {
+                "twitter": "https://twitter.com/prototype_cup",
+                "instagram": "https://instagram.com/prototype_endurance",
+                "youtube": "https://youtube.com/prototype-endurance",
+                "twitch": "https://twitch.tv/prototype_endurance",
+                "reddit": "https://reddit.com/r/prototype_endurance",
+                "tiktok": "https://tiktok.com/@prototype_endurance",
+                "linkedin": "https://linkedin.com/company/prototype-endurance",
+                "telegram": "https://t.me/prototype_endurance",
+                "whatsapp": "https://wa.me/+1234567890",
+                "spotify": "https://open.spotify.com/show/prototype-endurance"
+            }
         }
     ],
     "usefulLinks": [
         {
-            "name": "Discord",
+            "name": "Discord Principal",
             "url": "https://discord.gg/simracingamerica",
             "icon": "fa-discord"
         },

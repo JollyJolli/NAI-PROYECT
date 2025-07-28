@@ -1,0 +1,100 @@
+{
+    "introduction": {
+        "title": "Solicitar Broadcast",
+        "description": "Para solicitar un broadcast, necesitamos conocer un poco sobre ti y el evento que estás planeando. Tenemos capacidad limitada para broadcasts concurrentes, por lo que te pedimos que verifiques conflictos en nuestro Calendario de Broadcasts antes de enviar tu solicitud."
+    },
+    "form": {
+        "action": "mailto:simracingamericatv@gmail.com",
+        "method": "POST",
+        "steps": [
+            {
+                "title": "Paso 1: Información Básica",
+                "fields": [
+                    {
+                        "name": "fullname",
+                        "label": "Nombre Completo",
+                        "type": "text",
+                        "placeholder": "Juan Pérez",
+                        "required": true
+                    },
+                    {
+                        "name": "email",
+                        "label": "Dirección de Email",
+                        "type": "email",
+                        "placeholder": "juan.perez@ejemplo.com",
+                        "required": true
+                    },
+                    {
+                        "name": "simulator",
+                        "label": "Simulador",
+                        "type": "select",
+                        "options": [
+                            "Live for Speed",
+                            "Assetto Corsa"
+                        ],
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "title": "Paso 2: Servicios que Requieres",
+                "fields": [
+                    {
+                        "name": "services",
+                        "label": "Tipo de Servicio",
+                        "type": "radio",
+                        "options": [
+                            {
+                                "value": "commentary",
+                                "label": "Solo Comentarios"
+                            },
+                            {
+                                "value": "stream",
+                                "label": "Solo Stream"
+                            },
+                            {
+                                "value": "both",
+                                "label": "Ambos (Broadcast Completo)"
+                            }
+                        ],
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "title": "Paso 3: Detalles del Evento/Serie",
+                "fields": [
+                    {
+                        "name": "eventName",
+                        "label": "Nombre del Evento/Serie",
+                        "type": "text",
+                        "placeholder": "8 Horas de Buenos Aires",
+                        "required": true
+                    },
+                    {
+                        "name": "website",
+                        "label": "Sitio Web/Foro (opcional)",
+                        "type": "url",
+                        "placeholder": "https://ejemplo.com",
+                        "required": false
+                    },
+                    {
+                        "name": "aboutEvent",
+                        "label": "Sobre tu Evento",
+                        "type": "textarea",
+                        "placeholder": "Cuéntanos un poco sobre tu evento y por qué lo estás organizando.",
+                        "required": true
+                    },
+                    {
+                        "name": "schedule",
+                        "label": "Cronograma Provisional",
+                        "type": "textarea",
+                        "placeholder": "Por favor incluye toda la información posible: horarios y fechas, autos y circuitos, formatos de evento, etc.",
+                        "required": true
+                    }
+                ]
+            }
+        ],
+        "disclaimer": "No podemos garantizar que podremos acomodar todas las solicitudes, pero nos esforzaremos por hacerlo si tenemos los recursos disponibles."
+    }
+}
