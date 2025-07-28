@@ -615,49 +615,23 @@ function loadExtraContent(data) {
     const leaguesGrid = extraSection.querySelector('.leagues-grid');
     if (data.leagues) {
         leaguesGrid.innerHTML = data.leagues
-            .map(league => {
-                const socialIcons = Object.entries(league.social)
-                    .map(([platform, url]) => {
-                        const iconMap = {
-                            'twitter': 'fab fa-twitter',
-                            'instagram': 'fab fa-instagram',
-                            'youtube': 'fab fa-youtube',
-                            'discord': 'fab fa-discord',
-                            'facebook': 'fab fa-facebook',
-                            'twitch': 'fab fa-twitch',
-                            'reddit': 'fab fa-reddit',
-                            'tiktok': 'fab fa-tiktok',
-                            'linkedin': 'fab fa-linkedin',
-                            'telegram': 'fab fa-telegram',
-                            'whatsapp': 'fab fa-whatsapp',
-                            'spotify': 'fab fa-spotify'
-                        };
-                        const icon = iconMap[platform] || 'fas fa-link';
-                        return `
-                            <a href="${url}" target="_blank" rel="noopener noreferrer" class="social-link" title="${platform}">
-                                <i class="${icon}"></i>
-                            </a>
-                        `;
-                    })
-                    .join('');
-                
-                return `
-                    <div class="league-card">
-                        <div class="league-header">
-                            <img src="${league.logo}" alt="${league.name}" class="league-logo">
-                            <h3>${league.name}</h3>
+            .map(league => `
+                <div class="league-card" style="--bg-image: url('data/things/leagues/${league.id}-bg.jpg')">
+                    <div class="league-content">
+                        <div class="league-info">
+                            <div class="league-header">
+                                <h3>${league.name}</h3>
+                            </div>
                         </div>
                         <div class="league-discord">
-                            <a href="${league.discord}" target="_blank" rel="noopener noreferrer" class="discord-btn">
-                                <i class="fab fa-discord"></i> Únete al Discord
+                            <a href="${league.discord}" target="_blank" class="discord-btn">
+                                <i class="fab fa-discord"></i> Únete
                             </a>
                         </div>
-                        <div class="league-social">
-                            ${socialIcons}
-                        </div>
                     </div>
-                `;
-            })
+                    <img src="${league.logo}" alt="${league.name}" class="league-logo">
+                </div>
+            `)
             .join('');
     }
     
