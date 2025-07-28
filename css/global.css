@@ -168,6 +168,61 @@ footer {
     animation: fadeIn 0.5s ease forwards;
 }
 
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Sponsors LED Scroller */
+.sponsors-scroller {
+    background: linear-gradient(90deg, #000000, #1a1a1a, #000000);
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 110, 255, 0.3), inset 0 0 20px rgba(0, 110, 255, 0.1);
+}
+
+.sponsors-scroller::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.8) 0%, 
+        transparent 10%, 
+        transparent 90%, 
+        rgba(0, 0, 0, 0.8) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.scroller-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 30s linear infinite;
+}
+
+.sponsor-text {
+    color: var(--primary-blue);
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 10px var(--primary-blue), 0 0 20px var(--primary-blue), 0 0 30px var(--primary-blue);
+    padding: 0 3rem;
+    display: inline-block;
+}
+
 /* Sponsors Section */
 .sponsors-grid {
     display: grid;
