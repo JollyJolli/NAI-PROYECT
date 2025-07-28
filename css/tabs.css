@@ -90,29 +90,157 @@
 
 /* Sobre Nosotros Tab */
 .about-content {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
+/* Section styling */
+.about-content > div {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: var(--grid-bg);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.about-content > div:hover {
+    transform: translateY(-3px);
+}
+
+/* Section headers */
+.about-content h2 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-bottom: 2px solid rgba(0, 110, 255, 0.2);
+    padding-bottom: 1rem;
+}
+
+.about-content h2 i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+/* Content text styling */
+.section-intro .content p,
+.services .content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.section-intro .content p {
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* Services list styling */
+.services-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.services-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--darker-bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-blue);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #f0f0f0;
+}
+
+.services-list li:hover {
+    background: rgba(0, 110, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.services-list li i {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    min-width: 20px;
+}
+
+/* Team grid */
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .team-member {
-    background: var(--grid-bg);
-    border-radius: 8px;
-    padding: 1.5rem;
+    background: var(--darker-bg);
+    border-radius: 12px;
+    padding: 2rem;
     text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 110, 255, 0.2);
 }
 
 .team-member img {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-blue);
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: var(--white);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member .role {
+    color: var(--primary-blue);
+    font-weight: 500;
     margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.team-member .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.team-member .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.team-member .social-link:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1);
 }
 
 /* Calendario Tab */
