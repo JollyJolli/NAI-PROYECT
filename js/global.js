@@ -106,11 +106,38 @@ async function checkStreamStatus() {
     }
 }
 
+// Load sponsors for LED scroller
+async function loadSponsorsScroller() {
+    try {
+        const response = await fetch('data/sobrenosotros.json');
+        const data = await response.json();
+        
+        if (data.sponsors && data.sponsors.length > 0) {
+            const sponsorNames = data.sponsors.map(sponsor => sponsor.name);
+            const sponsorText = sponsorNames.join(' • ') + ' • ';
+            
+            const scrollerElement = document.querySelector('.sponsor-text');
+            if (scrollerElement) {
+                scrollerElement.textContent = sponsorText.repeat(3); // Repetir para efecto continuo
+            }
+        }
+    } catch (error) {
+        console.error('Error loading sponsors:', error);
+        const scrollerElement = document.querySelector('.sponsor-text');
+        if (scrollerElement) {
+            scrollerElement.textContent = 'SIMRACING AMERICA TV • TRANSMISIONES EN VIVO • CARRERAS VIRTUALES • ';
+        }
+    }
+}
+
 // Initialize the application
 async function init() {
     await loadConfig();
     checkStreamStatus();
     setInterval(checkStreamStatus, 60000); // Check stream status every minute
+
+    // Load sponsors scroller
+    await loadSponsorsScroller();
 
     // Load next race info and start countdown
     try {
