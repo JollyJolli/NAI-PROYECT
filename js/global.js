@@ -85,24 +85,84 @@ function updateCountdown(targetDate) {
     }
 }
 
-// Simulate Twitch stream status check
+// Twitch API configuration
+const TWITCH_CLIENT_ID = 'bzwfv7ba6vdpfyjft6uyzxe3iurf8y';
+const TWITCH_CLIENT_SECRET = 'upo10yn777jygcdom6j0ahlckwwlg0';
+const TWITCH_CHANNEL = 'simracingamericatv';
+
+// Get Twitch access token
+async function getTwitchAccessToken() {
+    try {
+        const response = await fetch('https://id.twitch.tv/oauth2/token', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: new URLSearchParams({
+                'client_id': TWITCH_CLIENT_ID,
+                'client_secret': TWITCH_CLIENT_SECRET,
+                'grant_type': 'client_credentials'
+            })
+        });
+        
+        const data = await response.json();
+        return data.access_token;
+    } catch (error) {
+        console.error('Error getting Twitch access token:', error);
+        return null;
+    }
+}
+
+// Check Twitch stream status using API
 async function checkStreamStatus() {
     try {
-        const response = await fetch('data/inicio.json');
-        const data = await response.json();
+        const accessToken = await getTwitchAccessToken();
+        if (!accessToken) {
+            throw new Error('Failed to get access token');
+        }
         
+        const response = await fetch(`https://api.twitch.tv/helix/streams?user_login=${TWITCH_CHANNEL}`, {
+            headers: {
+                'Client-ID': TWITCH_CLIENT_ID,
+                'Authorization': `Bearer ${accessToken}`
+            }
+        });
+        
+        const data = await response.json();
         const statusIndicator = document.querySelector('.status-indicator');
         const statusText = document.querySelector('.status-text');
         
-        if (data.streamStatus.isLive) {
+        if (data.data && data.data.length > 0) {
+            // Stream is live
             statusIndicator.classList.add('live');
             statusText.textContent = 'EN VIVO';
+            console.log('Stream is live:', data.data[0]);
         } else {
+            // Stream is offline
             statusIndicator.classList.remove('live');
             statusText.textContent = 'DESCONECTADO';
+            console.log('Stream is offline');
         }
     } catch (error) {
         console.error('Error checking stream status:', error);
+        // Fallback to local data if API fails
+        try {
+            const response = await fetch('data/inicio.json');
+            const data = await response.json();
+            
+            const statusIndicator = document.querySelector('.status-indicator');
+            const statusText = document.querySelector('.status-text');
+            
+            if (data.streamStatus.isLive) {
+                statusIndicator.classList.add('live');
+                statusText.textContent = 'EN VIVO';
+            } else {
+                statusIndicator.classList.remove('live');
+                statusText.textContent = 'DESCONECTADO';
+            }
+        } catch (fallbackError) {
+            console.error('Error with fallback stream status:', fallbackError);
+        }
     }
 }
 
