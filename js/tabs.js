@@ -198,38 +198,90 @@ function loadAboutContent(data) {
     const teamGrid = aboutSection.querySelector('.team-grid');
     let teamHTML = '';
     
-    Object.values(data.team).forEach(department => {
+    // Country to flag emoji mapping
+    const countryFlags = {
+        'Alemania': '🇩🇪',
+        'México': '🇲🇽',
+        'Venezuela': '🇻🇪',
+        'Perú': '🇵🇪',
+        'Colombia': '🇨🇴',
+        'Chile': '🇨🇱',
+        'Uruguay': '🇺🇾',
+        'Argentina': '🇦🇷'
+    };
+    
+    Object.entries(data.team).forEach(([key, department]) => {
         teamHTML += `<div class="department-section">`;
         teamHTML += `<h2 class="department-title">${department.title}</h2>`;
-        teamHTML += `<div class="department-members">`;
         
-        department.members.forEach(member => {
-            let socialLinksHTML = '';
+        // Check if this is commentators or marketing section for list format
+        if (key === 'commentators' || key === 'marketing') {
+            teamHTML += `<div class="department-members-list">`;
             
-            if (member.socialNetworks && member.socialNetworks.length > 0) {
-                socialLinksHTML = '<div class="social-links">';
-                member.socialNetworks.forEach(social => {
-                    socialLinksHTML += `
-                        <a href="${social.url}" class="social-link" title="${social.platform}" target="_blank" rel="noopener noreferrer">
-                            <i class="${social.icon}"></i>
-                        </a>
-                    `;
-                });
-                socialLinksHTML += '</div>';
-            }
+            department.members.forEach(member => {
+                let socialLinksHTML = '';
+                
+                if (member.socialNetworks && member.socialNetworks.length > 0) {
+                    socialLinksHTML = '<div class="social-links-compact">';
+                    member.socialNetworks.forEach(social => {
+                        socialLinksHTML += `
+                            <a href="${social.url}" class="social-link-compact" title="${social.platform}" target="_blank" rel="noopener noreferrer">
+                                <i class="${social.icon}"></i>
+                            </a>
+                        `;
+                    });
+                    socialLinksHTML += '</div>';
+                }
+                
+                const flag = countryFlags[member.country] || '🌍';
+                
+                teamHTML += `
+                    <div class="team-member-compact">
+                        <img src="${member.photo}" alt="${member.name}" loading="lazy" class="member-photo-compact">
+                        <div class="member-info-compact">
+                            <h3>${member.name} ${flag}</h3>
+                            ${socialLinksHTML}
+                        </div>
+                    </div>
+                `;
+            });
             
-            teamHTML += `
-                <div class="team-member">
-                    <img src="${member.photo}" alt="${member.name}" loading="lazy">
-                    <h3>${member.name}</h3>
-                    <p class="role">${member.role || 'Miembro del Equipo'}</p>
-                    <p class="country">${member.country}</p>
-                    ${socialLinksHTML}
-                </div>
-            `;
-        });
+            teamHTML += `</div>`;
+        } else {
+            // Keep original format for management and development
+            teamHTML += `<div class="department-members">`;
+            
+            department.members.forEach(member => {
+                let socialLinksHTML = '';
+                
+                if (member.socialNetworks && member.socialNetworks.length > 0) {
+                    socialLinksHTML = '<div class="social-links">';
+                    member.socialNetworks.forEach(social => {
+                        socialLinksHTML += `
+                            <a href="${social.url}" class="social-link" title="${social.platform}" target="_blank" rel="noopener noreferrer">
+                                <i class="${social.icon}"></i>
+                            </a>
+                        `;
+                    });
+                    socialLinksHTML += '</div>';
+                }
+                
+                const flag = countryFlags[member.country] || '🌍';
+                
+                teamHTML += `
+                    <div class="team-member">
+                        <img src="${member.photo}" alt="${member.name}" loading="lazy">
+                        <h3>${member.name} ${flag}</h3>
+                        <p class="role">${member.role || 'Miembro del Equipo'}</p>
+                        ${socialLinksHTML}
+                    </div>
+                `;
+            });
+            
+            teamHTML += `</div>`;
+        }
         
-        teamHTML += `</div></div>`;
+        teamHTML += `</div>`;
     });
     
     teamGrid.innerHTML = teamHTML;

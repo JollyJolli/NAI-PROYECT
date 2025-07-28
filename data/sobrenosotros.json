@@ -129,7 +129,7 @@
                     ]
                 },
                 {
-                    "name": "Juan Francisco",
+                    "name": "Juan Francisco Piro",
                     "country": "Argentina",
                     "photo": "data/things/LOGO.png",
                     "socialNetworks": [
@@ -178,7 +178,7 @@
             "members": [
                 {
                     "name": "Andres Formen",
-                    "country": "Brasil",
+                    "country": "México",
                     "photo": "data/things/LOGO.png",
                     "socialNetworks": [
                         {"platform": "github", "url": "https://github.com/jollyjolli", "icon": "fab fa-github"},
