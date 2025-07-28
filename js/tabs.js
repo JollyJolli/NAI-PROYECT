@@ -196,29 +196,33 @@ function loadAboutContent(data) {
     
     // Team section
     const teamGrid = aboutSection.querySelector('.team-grid');
-    teamGrid.innerHTML = data.team
-        .map(member => `
-            <div class="team-member card">
-                <img src="${member.photo}" alt="${member.name}">
-                <h3>${member.name}</h3>
-                <p class="role">${member.role}</p>
-                <div class="social-links">
-                    ${Object.entries(member.social)
-                        .map(([platform, handle]) => `
-                            <a href="https://${platform}.com/${handle}" class="social-link">
-                                <i class="fab fa-${platform}"></i>
-                            </a>
-                        `)
-                        .join('')}
+    let teamHTML = '';
+    
+    Object.values(data.team).forEach(department => {
+        teamHTML += `<div class="department-section">`;
+        teamHTML += `<h3 class="department-title">${department.title}</h3>`;
+        teamHTML += `<div class="department-members">`;
+        
+        department.members.forEach(member => {
+            teamHTML += `
+                <div class="team-member card">
+                    <img src="${member.photo}" alt="${member.name}">
+                    <h3>${member.name}</h3>
+                    <p class="role">${member.role || member.country}</p>
+                    <p class="country">${member.country}</p>
                 </div>
-            </div>
-        `)
-        .join('');
+            `;
+        });
+        
+        teamHTML += `</div></div>`;
+    });
+    
+    teamGrid.innerHTML = teamHTML;
     
     // Sponsors section
     const sponsorsGrid = aboutSection.querySelector('.sponsors-grid');
-    if (data.sponsors) {
-        sponsorsGrid.innerHTML = data.sponsors
+    if (data.sponsors && data.sponsors.list) {
+        sponsorsGrid.innerHTML = data.sponsors.list
             .map(sponsor => `
                 <div class="sponsor-card">
                     <a href="${sponsor.website}" target="_blank" rel="noopener noreferrer">

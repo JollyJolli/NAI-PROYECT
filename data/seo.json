@@ -1,6 +1,6 @@
 {
     "title": "SimRacingAmericaTV - Transmisiones de Carreras Virtuales en Latinoamérica",
-    "description": "La principal plataforma de simracing en América Latina. Transmisiones en vivo, campeonatos profesionales y comunidad activa de carreras virtuales.",
+    "description": "Equipo emergente apasionado por el automovilismo virtual. Transmisiones de alta calidad con narradores especializados para cada liga. Cinco meses ofreciendo experiencias visuales y auditivas profesionales.",
     "keywords": [
         "simracing",
         "carreras virtuales",
@@ -8,9 +8,11 @@
         "motorsport",
         "latinoamérica",
         "transmisiones en vivo",
-        "iRacing",
+        "Live for Speed",
         "Assetto Corsa",
-        "competición virtual"
+        "competición virtual",
+        "narradores especializados",
+        "SimRacingAmericaTV"
     ],
     "ogImage": "data/things/LOGO-with-name.png",
     "twitterCard": "summary_large_image",

@@ -1,6 +1,6 @@
 {
     "siteName": "SimRacingAmericaTV",
-    "description": "Tu destino para las mejores carreras virtuales en Latinoamérica",
+    "description": "Somos un equipo emergente, apasionado por el automovilismo virtual, comprometido con brindar transmisiones de alta calidad directamente a tus pantallas.",
     "socialLinks": {
         "twitch": "https://twitch.tv/simracingamericatv",
         "twitter": "https://twitter.com/simracingamerica",
@@ -8,7 +8,7 @@
         "youtube": "https://youtube.com/simracingamericatv"
     },
     "contact": {
-        "email": "contacto@simracingamerica.tv",
+        "email": "simracingamericatv@gmail.com",
         "discord": "discord.gg/simracingamerica"
     }
 }

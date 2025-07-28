@@ -1,39 +1,123 @@
 {
-    "description": "Somos la principal plataforma de transmisión de simracing en América Latina",
+    "description": "Somos un equipo emergente, apasionado por el automovilismo virtual, comprometido con brindar transmisiones de alta calidad directamente a tus pantallas.",
     "whoWeAre": {
         "title": "¿Quiénes Somos?",
-        "content": "Un equipo apasionado por el automovilismo virtual, dedicado a llevar las mejores carreras a tu pantalla"
+        "content": "Somos un equipo emergente, apasionado por el automovilismo virtual, comprometido con brindar transmisiones de alta calidad directamente a tus pantallas. Aunque iniciamos hace apenas cinco meses, cada día trabajamos para perfeccionar todos los aspectos de nuestras coberturas, cuidando hasta el más mínimo detalle para ofrecer una experiencia visual y auditiva profesional. Contamos con un equipo de narradores y comentaristas especializados para cada liga, lo que garantiza un estilo único en cada transmisión.",
+        "applicationLink": "https://forms.gle/CBeCWGCj1wYDuUks8"
     },
     "whatWeOffer": {
         "title": "¿Qué Ofrecemos?",
         "services": [
-            "Transmisiones profesionales en vivo",
-            "Comentaristas expertos",
-            "Análisis técnico detallado",
-            "Múltiples campeonatos",
-            "Comunidad activa"
+            "Transmisiones en vivo de alta calidad",
+            "Narradores y comentaristas con experiencia",
+            "Análisis técnico y táctico de cada carrera",
+            "Cobertura de múltiples campeonatos",
+            "Comunidad activa y en constante crecimiento",
+            "Repeticiones, highlights y contenido exclusivo post-carrera",
+            "Colaboraciones con ligas y equipos",
+            "Estadísticas y gráficos en tiempo real",
+            "Asesoría para ligas que buscan profesionalizar sus eventos"
         ]
     },
-    "team": [
-        {
-            "name": "Carlos Rodriguez",
-            "role": "Director General",
-            "photo": "data/things/LOGO.png",
-            "social": {
-                "twitter": "@carlosR",
-                "instagram": "@carlos.simracing"
-            }
+    "team": {
+        "management": {
+            "title": "Dirección General",
+            "members": [
+                {
+                    "name": "Naitly Frei",
+                    "role": "Fundador y Director General",
+                    "country": "Alemania",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Kiro Victorio",
+                    "role": "Co-Director y Coordinador",
+                    "country": "México",
+                    "photo": "data/things/LOGO.png"
+                }
+            ]
         },
-        {
-            "name": "Ana Martinez",
-            "role": "Directora de Transmisión",
-            "photo": "things/LOGO.png",
-            "social": {
-                "twitter": "@anaM",
-                "instagram": "@ana.broadcast"
-            }
+        "commentators": {
+            "title": "Narradores/Comentaristas",
+            "members": [
+                {
+                    "name": "Salchicho Galindo",
+                    "country": "México",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Sol Gooda",
+                    "country": "Venezuela",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Chemantm",
+                    "country": "México",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Álvaro Gutiérrez",
+                    "country": "Perú",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Hernán Arteaga",
+                    "country": "Colombia",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Miguel Monsa",
+                    "country": "Colombia",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Gabriel Galax",
+                    "country": "Chile",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Dest Takahashi",
+                    "country": "Uruguay",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Juan Francisco",
+                    "country": "Argentina",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Tuko Gómez",
+                    "country": "Argentina",
+                    "photo": "data/things/LOGO.png"
+                }
+            ]
+        },
+        "marketing": {
+            "title": "Marketing & Comunicación",
+            "members": [
+                {
+                    "name": "Jossel Ortiz",
+                    "country": "Colombia",
+                    "photo": "data/things/LOGO.png"
+                },
+                {
+                    "name": "Jerónimo Avedaño",
+                    "country": "Argentina",
+                    "photo": "data/things/LOGO.png"
+                }
+            ]
+        },
+        "development": {
+            "title": "Desarrollo Web",
+            "members": [
+                {
+                    "name": "Andres Formen",
+                    "country": "Brasil",
+                    "photo": "data/things/LOGO.png"
+                }
+            ]
         }
-    ],
+    },
     "contactMethods": [
         {
             "name": "Discord",
@@ -92,24 +176,27 @@
             "followers": "2.1K"
         }
     ],
-    "sponsors": [
-        {
-            "name": "Instant Gaming",
-            "logo": "data/things/sponsors/INSTANT-GAMING.webp",
-            "website": "https://www.instant-gaming.com",
-            "description": "Plataforma líder en venta de videojuegos digitales"
-        },
-        {
-            "name": "Simufy",
-            "logo": "data/things/sponsors/SIMUFY.webp",
-            "website": "https://www.simufy.com",
-            "description": "Especialistas en hardware para simulación"
-        },
-        {
-            "name": "VexyHost",
-            "logo": "data/things/sponsors/VEXYHOST.webp",
-            "website": "https://www.vexyhost.com",
-            "description": "Servicios de hosting y servidores gaming"
-        }
-    ]
+    "sponsors": {
+        "title": "Sponsors Oficiales",
+        "list": [
+            {
+                "name": "Instant Gaming",
+                "logo": "data/things/sponsors/INSTANT-GAMING.webp",
+                "website": "https://www.instant-gaming.com",
+                "description": "Tus juegos de PC al mejor precio"
+            },
+            {
+                "name": "Simufy",
+                "logo": "data/things/sponsors/SIMUFY.webp",
+                "website": "https://www.simufy.com",
+                "description": "Los mejores periféricos para competir al máximo nivel"
+            },
+            {
+                "name": "VexyHost",
+                "logo": "data/things/sponsors/VEXYHOST.webp",
+                "website": "https://www.vexyhost.com",
+                "description": "Hosting, VPS y servidores dedicados de alto rendimiento"
+            }
+        ]
+    }
 }
