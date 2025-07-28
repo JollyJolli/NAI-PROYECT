@@ -34,6 +34,9 @@ async function loadTabContent(tabId) {
             case 'extra':
                 loadExtraContent(data);
                 break;
+            case 'contacto':
+                loadContactContent(data);
+                break;
         }
     } catch (error) {
         console.error(`Error loading ${tabId} content:`, error);
@@ -77,6 +80,69 @@ function loadAboutContent(data) {
             </div>
         `)
         .join('');
+    
+    // Sponsors section
+    const sponsorsGrid = aboutSection.querySelector('.sponsors-grid');
+    if (data.sponsors) {
+        sponsorsGrid.innerHTML = data.sponsors
+            .map(sponsor => `
+                <div class="sponsor-card">
+                    <a href="${sponsor.website}" target="_blank" rel="noopener noreferrer">
+                        <img src="${sponsor.logo}" alt="${sponsor.name}" loading="lazy">
+                        <div class="sponsor-info">
+                            <h3>${sponsor.name}</h3>
+                            <p>${sponsor.description}</p>
+                        </div>
+                    </a>
+                </div>
+            `)
+            .join('');
+    }
+    
+    // Contact methods section
+    if (data.contactMethods && data.contactMethods.length > 0) {
+        const contactMethodsGrid = document.querySelector('.contact-methods-grid');
+        if (contactMethodsGrid) {
+            contactMethodsGrid.innerHTML = data.contactMethods.map(method => `
+                <div class="contact-method-card">
+                    <div class="contact-icon">
+                        <i class="${method.icon}"></i>
+                    </div>
+                    <div class="contact-info">
+                        <h4>${method.name}</h4>
+                        <p>${method.description}</p>
+                        <a href="${method.url}" target="_blank" rel="noopener noreferrer" class="contact-link">
+                            Contactar
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+    }
+    
+    // Social networks section
+    if (data.socialNetworks && data.socialNetworks.length > 0) {
+        const socialNetworksGrid = document.querySelector('.social-networks-grid');
+        if (socialNetworksGrid) {
+            socialNetworksGrid.innerHTML = data.socialNetworks.map(network => `
+                <div class="social-network-card">
+                    <div class="social-header">
+                        <i class="${network.icon}"></i>
+                        <div class="social-info">
+                            <h4>${network.name}</h4>
+                            <span class="social-username">${network.username}</span>
+                        </div>
+                    </div>
+                    <div class="social-stats">
+                        <span class="followers">${network.followers} seguidores</span>
+                    </div>
+                    <a href="${network.url}" target="_blank" rel="noopener noreferrer" class="social-follow-btn">
+                        <i class="fas fa-plus"></i> Seguir
+                    </a>
+                </div>
+            `).join('');
+        }
+    }
 }
 
 // Variable global para mantener los datos del calendario
@@ -190,6 +256,7 @@ function setupSearchAndFilters() {
     const seriesFilter = document.getElementById('series-filter');
     const monthFilter = document.getElementById('month-filter');
     const trackFilter = document.getElementById('track-filter');
+    const eventFilter = document.getElementById('event-filter');
     const viewToggleButtons = document.querySelectorAll('.view-toggle button');
 
     // Remover eventos anteriores si existen
@@ -197,6 +264,7 @@ function setupSearchAndFilters() {
     seriesFilter.removeEventListener('change', handleSearch);
     monthFilter.removeEventListener('change', handleSearch);
     trackFilter.removeEventListener('change', handleSearch);
+    eventFilter.removeEventListener('change', handleSearch);
 
     // Search handler
     searchInput.addEventListener('input', handleSearch);
@@ -205,6 +273,11 @@ function setupSearchAndFilters() {
     seriesFilter.addEventListener('change', handleSearch);
     monthFilter.addEventListener('change', handleSearch);
     trackFilter.addEventListener('change', handleSearch);
+    eventFilter.addEventListener('change', handleSearch);
+    
+    // Set default to show only next race per league
+    eventFilter.value = 'next-only';
+    handleSearch();
 
     // View toggle handlers
     // View toggle handlers
@@ -245,6 +318,7 @@ function filterRaces() {
     const selectedSeries = document.getElementById('series-filter').value;
     const selectedMonth = document.getElementById('month-filter').value;
     const selectedTrack = document.getElementById('track-filter').value;
+    const selectedEvent = document.getElementById('event-filter').value;
 
     // Crear una copia profunda de los datos originales
     const filteredData = JSON.parse(JSON.stringify(calendarData));
@@ -252,7 +326,7 @@ function filterRaces() {
     const filteredSeries = filteredData.series.filter(series => {
         if (selectedSeries !== 'all' && series.id !== selectedSeries) return false;
 
-        const filteredRaces = series.races.filter(race => {
+        let filteredRaces = series.races.filter(race => {
             const raceDate = new Date(race.date);
             const raceMonth = raceDate.toLocaleString('es', { month: 'long' }).toLowerCase();
             
@@ -265,6 +339,20 @@ function filterRaces() {
                 (selectedTrack === 'all' || race.track.toLowerCase().includes(selectedTrack))
             );
         });
+
+        // Aplicar filtro de eventos
+        if (selectedEvent === 'next-only') {
+            // Mostrar solo la próxima carrera (la más cercana en el tiempo)
+            const now = new Date();
+            const upcomingRaces = filteredRaces
+                .filter(race => new Date(race.date) > now)
+                .sort((a, b) => new Date(a.date) - new Date(b.date));
+            filteredRaces = upcomingRaces.length > 0 ? [upcomingRaces[0]] : [];
+        } else if (selectedEvent === 'featured') {
+            // Mostrar solo eventos destacados
+            filteredRaces = filteredRaces.filter(race => race.featured);
+        }
+        // Si selectedEvent === 'all', no se aplica filtro adicional
 
         series.races = filteredRaces;
         return filteredRaces.length > 0;
@@ -289,26 +377,202 @@ function formatDate(dateString) {
 function loadExtraContent(data) {
     const extraSection = document.querySelector('#extra');
     
-    // FAQ section
-    const faqGrid = extraSection.querySelector('.faq-grid');
-    faqGrid.innerHTML = data.faq
-        .map(item => `
-            <div class="faq-item">
-                <h3 class="faq-question"><i class="fas fa-question-circle"></i> ${item.question}</h3>
-                <p class="faq-answer">${item.answer}</p>
-            </div>
-        `)
-        .join('');
+    // Leagues Discord section
+    const leaguesGrid = extraSection.querySelector('.leagues-grid');
+    if (data.leagues) {
+        leaguesGrid.innerHTML = data.leagues
+            .map(league => {
+                const socialIcons = Object.entries(league.social)
+                    .map(([platform, url]) => {
+                        const iconMap = {
+                            'twitter': 'fab fa-twitter',
+                            'instagram': 'fab fa-instagram',
+                            'youtube': 'fab fa-youtube',
+                            'discord': 'fab fa-discord',
+                            'facebook': 'fab fa-facebook',
+                            'twitch': 'fab fa-twitch',
+                            'reddit': 'fab fa-reddit',
+                            'tiktok': 'fab fa-tiktok',
+                            'linkedin': 'fab fa-linkedin',
+                            'telegram': 'fab fa-telegram',
+                            'whatsapp': 'fab fa-whatsapp',
+                            'spotify': 'fab fa-spotify'
+                        };
+                        const icon = iconMap[platform] || 'fas fa-link';
+                        return `
+                            <a href="${url}" target="_blank" rel="noopener noreferrer" class="social-link" title="${platform}">
+                                <i class="${icon}"></i>
+                            </a>
+                        `;
+                    })
+                    .join('');
+                
+                return `
+                    <div class="league-card">
+                        <div class="league-header">
+                            <img src="${league.logo}" alt="${league.name}" class="league-logo">
+                            <h3>${league.name}</h3>
+                        </div>
+                        <div class="league-discord">
+                            <a href="${league.discord}" target="_blank" rel="noopener noreferrer" class="discord-btn">
+                                <i class="fab fa-discord"></i> Únete al Discord
+                            </a>
+                        </div>
+                        <div class="league-social">
+                            ${socialIcons}
+                        </div>
+                    </div>
+                `;
+            })
+            .join('');
+    }
     
     // Useful links section
     const linksGrid = extraSection.querySelector('.social-grid');
-    linksGrid.innerHTML = data.usefulLinks
-        .map(link => `
-            <a href="${link.url}" class="btn">
-                <i class="fas ${link.icon}"></i> ${link.name}
-            </a>
-        `)
-        .join('');
+    if (data.usefulLinks) {
+        linksGrid.innerHTML = data.usefulLinks
+            .map(link => `
+                <a href="${link.url}" class="btn" target="_blank" rel="noopener noreferrer">
+                    <i class="fas ${link.icon}"></i> ${link.name}
+                </a>
+            `)
+            .join('');
+    }
+}
+
+// Load Contact content
+function loadContactContent(data) {
+    const contactSection = document.getElementById('contacto');
+    if (!contactSection) return;
+
+    contactSection.innerHTML = `
+        <div class="broadcast-intro">
+            <h2>${data.introduction.title}</h2>
+            <p>${data.introduction.description}</p>
+        </div>
+        
+        <div class="broadcast-form-container">
+            <form id="broadcast-request-form" class="broadcast-form">
+                ${data.form.steps.map((step, stepIndex) => `
+                    <div class="form-step">
+                        <h3>${step.title}</h3>
+                        <div class="form-fields">
+                            ${step.fields.map(field => {
+                                if (field.type === 'select') {
+                                    return `
+                                        <div class="form-group">
+                                            <label for="${field.name}">${field.label}${field.required ? ' *' : ''}</label>
+                                            <select id="${field.name}" name="${field.name}" ${field.required ? 'required' : ''}>
+                                                <option value="">${field.placeholder || 'Seleccionar...'}</option>
+                                                ${field.options.map(option => `<option value="${option}">${option}</option>`).join('')}
+                                            </select>
+                                        </div>
+                                    `;
+                                } else if (field.type === 'textarea') {
+                                    return `
+                                        <div class="form-group">
+                                            <label for="${field.name}">${field.label}${field.required ? ' *' : ''}</label>
+                                            <textarea id="${field.name}" name="${field.name}" placeholder="${field.placeholder}" rows="4" ${field.required ? 'required' : ''}></textarea>
+                                        </div>
+                                    `;
+                                } else if (field.type === 'radio') {
+                                    return `
+                                        <div class="form-group radio-group">
+                                            <label class="group-label">${field.label}${field.required ? ' *' : ''}</label>
+                                            <div class="radio-options">
+                                                ${field.options.map(option => `
+                                                    <label class="radio-option">
+                                                        <input type="radio" name="${field.name}" value="${option.value}" ${field.required ? 'required' : ''}>
+                                                        <span class="radio-label">${option.label}</span>
+                                                    </label>
+                                                `).join('')}
+                                            </div>
+                                        </div>
+                                    `;
+                                } else {
+                                    return `
+                                        <div class="form-group">
+                                            <label for="${field.name}">${field.label}${field.required ? ' *' : ''}</label>
+                                            <input type="${field.type}" id="${field.name}" name="${field.name}" placeholder="${field.placeholder}" ${field.required ? 'required' : ''}>
+                                        </div>
+                                    `;
+                                }
+                            }).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+                
+                <div class="form-disclaimer">
+                    <p><em>${data.form.disclaimer}</em></p>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                </button>
+            </form>
+        </div>
+    `;
+    
+    // Setup form submission handler
+    const form = document.getElementById('broadcast-request-form');
+    if (form) {
+        form.addEventListener('submit', handleBroadcastFormSubmission);
+    }
+}
+
+// Handle broadcast form submission
+function handleBroadcastFormSubmission(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    
+    // Create email body
+    const emailBody = `
+SOLICITUD DE BROADCAST - SimRacingAmericaTV
+
+=== INFORMACIÓN BÁSICA ===
+Nombre Completo: ${data.fullname}
+Email: ${data.email}
+Simulador: ${data.simulator}
+
+=== SERVICIOS REQUERIDOS ===
+Tipo de Servicio: ${data.services}
+
+=== DETALLES DEL EVENTO ===
+Nombre del Evento/Serie: ${data.eventName}
+Sitio Web/Foro: ${data.website || 'No especificado'}
+
+Sobre el Evento:
+${data.aboutEvent}
+
+Cronograma Provisional:
+${data.schedule}
+
+---
+Solicitud enviada desde: ${window.location.href}
+Fecha: ${new Date().toLocaleString()}
+    `;
+    
+    // Create mailto link
+    const subject = encodeURIComponent(`Solicitud de Broadcast - ${data.eventName}`);
+    const body = encodeURIComponent(emailBody);
+    const mailtoLink = `mailto:simracingamericatv@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    const submitBtn = e.target.querySelector('.submit-btn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-check"></i> Solicitud enviada';
+    submitBtn.disabled = true;
+    
+    setTimeout(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        e.target.reset();
+    }, 3000);
 }
 
 // Event listeners
