@@ -21,8 +21,16 @@ function switchTab(e) {
 // Load content for specific tabs
 async function loadTabContent(tabId) {
     try {
-        const response = await fetch(`data/${tabId}.json`);
-        const data = await response.json();
+        let data;
+        
+        if (tabId === 'calendario') {
+            // Cargar datos del calendario desde Google Sheets API
+            data = await loadCalendarFromAPI();
+        } else {
+            // Cargar otros datos desde archivos JSON locales
+            const response = await fetch(`data/${tabId}.json`);
+            data = await response.json();
+        }
         
         switch(tabId) {
             case 'sobrenosotros':
@@ -41,6 +49,104 @@ async function loadTabContent(tabId) {
     } catch (error) {
         console.error(`Error loading ${tabId} content:`, error);
     }
+}
+
+// Función para cargar datos del calendario desde Google Sheets API
+async function loadCalendarFromAPI() {
+    try {
+        const response = await fetch('https://api.sheetbest.com/sheets/cf4f265a-7a01-4f7b-87ca-ca52ed1425cc');
+        const flatData = await response.json();
+        
+        // Transformar datos planos a estructura anidada
+        return transformCalendarData(flatData);
+    } catch (error) {
+        console.error('Error loading calendar from API:', error);
+        // Fallback a datos locales si falla la API
+        const response = await fetch('data/calendario.json');
+        return await response.json();
+    }
+}
+
+// Función para transformar datos planos del CSV a estructura anidada
+function transformCalendarData(flatData) {
+    const seriesMap = new Map();
+    const months = new Set();
+    const tracks = new Set();
+    const difficulties = new Set();
+    const types = new Set();
+    
+    // Procesar cada fila del CSV
+    flatData.forEach(row => {
+        const serieId = row.Serie_ID;
+        
+        // Crear serie si no existe
+        if (!seriesMap.has(serieId)) {
+            seriesMap.set(serieId, {
+                id: serieId,
+                name: row.Serie_Nombre,
+                icon: row.Serie_Icono,
+                color: row.Serie_Color,
+                description: row.Serie_Descripcion,
+                races: []
+            });
+        }
+        
+        // Agregar carrera a la serie
+        const race = {
+            id: row.Carrera_ID,
+            name: row.Carrera_Nombre,
+            round: parseInt(row.Ronda),
+            date: row.Fecha_Hora,
+            track: row.Circuito,
+            location: row.Ubicacion,
+            distance: row.Distancia,
+            featured: row.Destacada === 'TRUE' || row.Destacada === true,
+            status: row.Estado,
+            trackType: row.Tipo_Circuito,
+            difficulty: parseInt(row.Dificultad),
+            weather: row.Clima
+        };
+        
+        // Agregar vueltas o duración según corresponda
+        if (row.Vueltas && row.Vueltas !== '') {
+            race.laps = parseInt(row.Vueltas);
+        }
+        if (row.Duracion && row.Duracion !== '') {
+            race.duration = row.Duracion;
+        }
+        
+        seriesMap.get(serieId).races.push(race);
+        
+        // Recopilar datos para filtros
+        const raceDate = new Date(row.Fecha_Hora);
+        const monthName = raceDate.toLocaleString('es', { month: 'long' });
+        months.add(monthName.charAt(0).toUpperCase() + monthName.slice(1));
+        tracks.add(row.Circuito);
+        difficulties.add(parseInt(row.Dificultad));
+        types.add(row.Tipo_Circuito);
+    });
+    
+    const series = Array.from(seriesMap.values());
+    
+    // Calcular estadísticas
+    const totalRaces = flatData.length;
+    const activeSeries = series.length;
+    const uniqueTracks = tracks.size;
+    
+    return {
+        series: series,
+        stats: {
+            totalRaces: totalRaces,
+            activeSeries: activeSeries,
+            uniqueTracks: uniqueTracks
+        },
+        filters: {
+            months: Array.from(months).sort(),
+            tracks: Array.from(tracks).sort(),
+            difficulties: Array.from(difficulties).sort(),
+            types: Array.from(types).sort()
+        }
+    };
 }
 
 // Load About Us content
