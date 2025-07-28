@@ -186,6 +186,51 @@ function initMobileMenu() {
     });
 }
 
+// Función para obtener la próxima carrera desde Google Sheets API
+async function getNextRaceFromAPI() {
+    try {
+        const response = await fetch('https://api.sheetbest.com/sheets/cf4f265a-7a01-4f7b-87ca-ca52ed1425cc');
+        const flatData = await response.json();
+        
+        // Encontrar la próxima carrera (la más cercana en el tiempo)
+        const now = new Date();
+        let nextRace = null;
+        let closestDate = null;
+        
+        flatData.forEach(row => {
+            const raceDate = new Date(row.Fecha_Hora);
+            if (raceDate > now) {
+                if (!closestDate || raceDate < closestDate) {
+                    closestDate = raceDate;
+                    nextRace = {
+                        name: row.Carrera_Nombre || 'Carrera Sin Nombre',
+                        series: row.Serie_Nombre || 'Serie Sin Nombre',
+                        round: parseInt(row.Ronda) || 1,
+                        date: row.Fecha_Hora,
+                        track: row.Circuito || 'Circuito Por Definir',
+                        location: row.Ubicacion || 'Ubicación Por Definir'
+                    };
+                }
+            }
+        });
+        
+        // Si no hay carreras futuras, usar fallback
+        if (!nextRace) {
+            const response = await fetch('data/inicio.json');
+            const data = await response.json();
+            return data.nextRace;
+        }
+        
+        return nextRace;
+    } catch (error) {
+        console.error('Error loading next race from API:', error);
+        // Fallback a datos locales si falla la API
+        const response = await fetch('data/inicio.json');
+        const data = await response.json();
+        return data.nextRace;
+    }
+}
+
 // Initialize the application
 async function init() {
     await loadConfig();
@@ -200,10 +245,7 @@ async function init() {
 
     // Load next race info and start countdown
     try {
-        const response = await fetch('data/inicio.json');
-        const data = await response.json();
-        
-        const nextRace = data.nextRace;
+        const nextRace = await getNextRaceFromAPI();
         document.querySelector('.race-name').textContent = nextRace.name;
         document.querySelector('.race-round').textContent = `Ronda: ${nextRace.round}`;
         

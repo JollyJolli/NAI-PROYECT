@@ -8,11 +8,11 @@
         "twitchUrl": "https://twitch.tv/simracingamericatv"
     },
     "nextRace": {
-        "name": "Gran Premio de Argentina",
-        "series": "Formula Argentina",
-        "round": 5,
-        "date": "2025-08-15T20:00:00-03:00",
-        "track": "Autódromo Oscar y Juan Gálvez",
-        "location": "Buenos Aires, Argentina"
+        "name": "Especial Multi-Clase",
+        "series": "Random Friday Races",
+        "round": 1,
+        "date": "2025-08-02T21:00:00-03:00",
+        "track": "Interlagos",
+        "location": "São Paulo, Brasil"
     }
 }
