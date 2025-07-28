@@ -75,40 +75,53 @@ function transformCalendarData(flatData) {
     const difficulties = new Set();
     const types = new Set();
     
+    // Valores por defecto
+    const defaults = {
+        icon: 'fa-car-racing',
+        color: '#ff0000',
+        description: 'Serie de carreras',
+        status: 'upcoming',
+        trackType: 'permanent',
+        difficulty: 3,
+        weather: 'variable',
+        distance: 'TBD',
+        location: 'Por definir'
+    };
+    
     // Procesar cada fila del CSV
     flatData.forEach(row => {
-        const serieId = row.Serie_ID;
+        const serieId = row.Serie_ID || 'unknown';
         
         // Crear serie si no existe
         if (!seriesMap.has(serieId)) {
             seriesMap.set(serieId, {
                 id: serieId,
-                name: row.Serie_Nombre,
-                icon: row.Serie_Icono,
-                color: row.Serie_Color,
-                description: row.Serie_Descripcion,
+                name: row.Serie_Nombre || 'Serie Sin Nombre',
+                icon: row.Serie_Icono || defaults.icon,
+                color: row.Serie_Color || defaults.color,
+                description: row.Serie_Descripcion || defaults.description,
                 races: []
             });
         }
         
         // Agregar carrera a la serie
         const race = {
-            id: row.Carrera_ID,
-            name: row.Carrera_Nombre,
-            round: parseInt(row.Ronda),
-            date: row.Fecha_Hora,
-            track: row.Circuito,
-            location: row.Ubicacion,
-            distance: row.Distancia,
-            featured: row.Destacada === 'TRUE' || row.Destacada === true,
-            status: row.Estado,
-            trackType: row.Tipo_Circuito,
-            difficulty: parseInt(row.Dificultad),
-            weather: row.Clima
+            id: row.Carrera_ID || `race-${Date.now()}`,
+            name: row.Carrera_Nombre || 'Carrera Sin Nombre',
+            round: parseInt(row.Ronda) || 1,
+            date: row.Fecha_Hora || 'Fecha por Definir',
+            track: row.Circuito || 'Circuito Por Definir',
+            location: row.Ubicacion || defaults.location,
+            distance: row.Distancia || defaults.distance,
+            featured: row.Destacada === 'TRUE' || row.Destacada === true || row.Destacada === 'true',
+            status: row.Estado || defaults.status,
+            trackType: row.Tipo_Circuito || defaults.trackType,
+            difficulty: parseInt(row.Dificultad) || defaults.difficulty,
+            weather: row.Clima || defaults.weather
         };
         
         // Agregar vueltas o duración según corresponda
-        if (row.Vueltas && row.Vueltas !== '') {
+        if (row.Vueltas && row.Vueltas !== '' && !isNaN(parseInt(row.Vueltas))) {
             race.laps = parseInt(row.Vueltas);
         }
         if (row.Duracion && row.Duracion !== '') {
@@ -117,13 +130,28 @@ function transformCalendarData(flatData) {
         
         seriesMap.get(serieId).races.push(race);
         
-        // Recopilar datos para filtros
-        const raceDate = new Date(row.Fecha_Hora);
-        const monthName = raceDate.toLocaleString('es', { month: 'long' });
-        months.add(monthName.charAt(0).toUpperCase() + monthName.slice(1));
-        tracks.add(row.Circuito);
-        difficulties.add(parseInt(row.Dificultad));
-        types.add(row.Tipo_Circuito);
+        // Recopilar datos para filtros (solo si los datos son válidos)
+        if (race.date && race.date !== '') {
+            try {
+                const raceDate = new Date(race.date);
+                if (!isNaN(raceDate.getTime())) {
+                    const monthName = raceDate.toLocaleString('es', { month: 'long' });
+                    months.add(monthName.charAt(0).toUpperCase() + monthName.slice(1));
+                }
+            } catch (e) {
+                console.warn('Fecha inválida:', race.date);
+            }
+        }
+        
+        if (race.track && race.track !== '') {
+            tracks.add(race.track);
+        }
+        if (!isNaN(race.difficulty)) {
+            difficulties.add(race.difficulty);
+        }
+        if (race.trackType && race.trackType !== '') {
+            types.add(race.trackType);
+        }
     });
     
     const series = Array.from(seriesMap.values());
