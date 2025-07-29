@@ -616,20 +616,24 @@ function loadExtraContent(data) {
     if (data.leagues) {
         leaguesGrid.innerHTML = data.leagues
             .map(league => `
-                <div class="league-card" style="--bg-image: url('data/things/leagues/${league.id}-bg.jpg')">
-                    <div class="league-content">
-                        <div class="league-info">
-                            <div class="league-header">
-                                <h3>${league.name}</h3>
+                <div class="league-container">
+                    <div class="league-card" style="--bg-image: url('${league.banner || 'data/things/LOGO.png'}');">
+                        <div class="league-content">
+                            <div class="league-info">
+                                <div class="league-header">
+                                    <h3>${league.name}</h3>
+                                </div>
+                            </div>
+                            <div class="league-discord">
+                                <a href="${league.discord}" target="_blank" class="discord-btn">
+                                    <i class="fab fa-discord"></i> Únete
+                                </a>
                             </div>
                         </div>
-                        <div class="league-discord">
-                            <a href="${league.discord}" target="_blank" class="discord-btn">
-                                <i class="fab fa-discord"></i> Únete
-                            </a>
-                        </div>
                     </div>
-                    <img src="${league.logo}" alt="${league.name}" class="league-logo">
+                    <div class="league-logo-card">
+                        <img src="${league.logo}" alt="${league.name}" class="league-logo">
+                    </div>
                 </div>
             `)
             .join('');

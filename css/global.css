@@ -245,7 +245,7 @@ footer {
     border-radius: 8px;
     margin: 2rem 0;
     padding: 1rem 0;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     box-shadow: 0 0 20px rgba(0, 110, 255, 0.3), inset 0 0 20px rgba(0, 110, 255, 0.1);
 }
@@ -346,18 +346,40 @@ footer {
     margin-right: auto;
 }
 
+.league-container {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 1rem;
+}
+
 .league-card {
     position: relative;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    border-radius: 12px;
+    border-radius: 12px 0 0 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     min-height: 80px;
     border: 2px solid transparent;
-    margin-right: 70px;
+    flex: 1;
+}
+
+.league-logo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border: 2px solid transparent;
+    border-left: none;
+    border-radius: 0 12px 12px 0;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    width: 80px;
+    min-height: 80px;
 }
 
 .league-card:hover {
@@ -409,10 +431,6 @@ footer {
 }
 
 .league-logo {
-    position: absolute;
-    top: 50%;
-    right: -60px;
-    transform: translateY(-50%);
     width: 50px;
     height: 50px;
     border-radius: 8px;
@@ -420,7 +438,6 @@ footer {
     background: #000;
     border: 3px solid #3498db;
     box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
-    z-index: 4;
 }
 
 .league-discord {
@@ -903,7 +920,13 @@ footer {
     
     .league-card {
         min-height: 70px;
-        margin-right: 55px;
+        border-radius: 12px 0 0 12px;
+    }
+    
+    .league-logo-card {
+        width: 60px;
+        min-height: 70px;
+        padding: 0.5rem;
     }
     
     .league-content {
@@ -918,7 +941,6 @@ footer {
     .league-logo {
         width: 40px;
         height: 40px;
-        right: -50px;
         border-width: 2px;
     }
     
