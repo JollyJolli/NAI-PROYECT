@@ -24,16 +24,6 @@
             }
         },
         {
-            "id": "friday",
-            "name": "Random Friday Races",
-            "logo": "/data/things/LOGO.png",
-            "banner": "/data/things/LOGO.png",
-            "discord": "https://discord.gg/friday-races",
-            "social": {
-                "discord": "https://discord.gg/friday-races"
-            }
-        },
-        {
             "id": "lt",
             "name": "LT Cup Series",
             "logo": "/data/things/leagues/LTCupSeries_LOGO.png",

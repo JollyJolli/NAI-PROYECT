@@ -64,30 +64,6 @@
             ]
         },
         {
-            "id": "friday",
-            "name": "Random Friday Races",
-            "icon": "fa-dice",
-            "color": "#9933ff",
-            "description": "Carreras especiales todos los viernes con formatos únicos",
-            "races": [
-                {
-                    "id": "fri-spec",
-                    "name": "Especial Multi-Clase",
-                    "round": 1,
-                    "date": "2025-08-02T21:00:00-03:00",
-                    "track": "Interlagos",
-                    "location": "São Paulo, Brasil",
-                    "distance": "200km",
-                    "laps": 45,
-                    "featured": false,
-                    "status": "upcoming",
-                    "trackType": "permanent",
-                    "difficulty": 4,
-                    "weather": "soleado"
-                }
-            ]
-        },
-        {
             "id": "lt",
             "name": "LT Cup Series",
             "icon": "fa-trophy",

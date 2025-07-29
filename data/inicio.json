@@ -8,11 +8,11 @@
         "twitchUrl": "https://twitch.tv/simracingamericatv"
     },
     "nextRace": {
-        "name": "Especial Multi-Clase",
-        "series": "Random Friday Races",
+        "name": "Apertura LT Cup",
+        "series": "LT Cup Series",
         "round": 1,
-        "date": "2025-08-02T21:00:00-03:00",
-        "track": "Interlagos",
-        "location": "São Paulo, Brasil"
+        "date": "2025-08-10T19:00:00-03:00",
+        "track": "Circuito de Potrero de los Funes",
+        "location": "San Luis, Argentina"
     }
 }
