@@ -52,28 +52,21 @@
             "title": "Narradores/Comentaristas",
             "members": [
                 {
-                    "name": "Salchicho Galindo",
+                    "name": "Esteban Hernández",
                     "country": "México",
                     "photo": "data/things/LOGO.png",
                     "socialNetworks": [
-                        {"platform": "twitch", "url": "https://twitch.tv/salchichogalindo", "icon": "fab fa-twitch"},
-                        {"platform": "youtube", "url": "https://youtube.com/@salchichogalindo", "icon": "fab fa-youtube"},
-                        {"platform": "twitter", "url": "https://twitter.com/salchichogalindo", "icon": "fab fa-twitter"},
-                        {"platform": "instagram", "url": "https://instagram.com/salchichogalindo", "icon": "fab fa-instagram"},
-                        {"platform": "tiktok", "url": "https://tiktok.com/@salchichogalindo", "icon": "fab fa-tiktok"},
-                        {"platform": "facebook", "url": "https://facebook.com/salchichogalindo", "icon": "fab fa-facebook"}
+                        {"platform": "instagram", "url": "https://instagram.com/estebanjoelhernandezcampos", "icon": "fab fa-instagram"}
                     ]
                 },
                 {
                     "name": "Sol Gooda",
                     "country": "Venezuela",
                     "photo": "data/things/LOGO.png",
-                    "socialNetworks": [
-                        {"platform": "twitch", "url": "https://twitch.tv/solgooda", "icon": "fab fa-twitch"}
-                    ]
+                    "socialNetworks": []
                 },
                 {
-                    "name": "Chemantm",
+                    "name": "Chemantm Sánchez",
                     "country": "México",
                     "photo": "data/things/LOGO.png",
                     "socialNetworks": []
@@ -100,32 +93,25 @@
                     ]
                 },
                 {
-                    "name": "Miguel Monsa",
+                    "name": "Miguel Monsalve",
                     "country": "Colombia",
                     "photo": "data/things/LOGO.png",
-                    "socialNetworks": [
-                        {"platform": "instagram", "url": "https://instagram.com/miguelmonsa", "icon": "fab fa-instagram"},
-                        {"platform": "tiktok", "url": "https://tiktok.com/@miguelmonsa", "icon": "fab fa-tiktok"}
-                    ]
+                    "socialNetworks": []
                 },
                 {
-                    "name": "Gabriel Galax",
+                    "name": "Galax Guaita",
                     "country": "Chile",
                     "photo": "data/things/LOGO.png",
-                    "socialNetworks": []
+                    "socialNetworks": [
+                        {"platform": "instagram", "url": "https://instagram.com/galahad.66", "icon": "fab fa-instagram"}
+                    ]
                 },
                 {
                     "name": "Dest Takahashi",
                     "country": "Uruguay",
                     "photo": "data/things/LOGO.png",
                     "socialNetworks": [
-                        {"platform": "twitch", "url": "https://twitch.tv/desttakahashi", "icon": "fab fa-twitch"},
-                        {"platform": "youtube", "url": "https://youtube.com/@desttakahashi", "icon": "fab fa-youtube"},
-                        {"platform": "twitter", "url": "https://twitter.com/desttakahashi", "icon": "fab fa-twitter"},
-                        {"platform": "instagram", "url": "https://instagram.com/desttakahashi", "icon": "fab fa-instagram"},
-                        {"platform": "discord", "url": "https://discord.gg/dest", "icon": "fab fa-discord"},
-                        {"platform": "facebook", "url": "https://facebook.com/desttakahashi", "icon": "fab fa-facebook"},
-                        {"platform": "tiktok", "url": "https://tiktok.com/@desttakahashi", "icon": "fab fa-tiktok"}
+                        {"platform": "instagram", "url": "https://instagram.com/dest_takahashi", "icon": "fab fa-instagram"}
                     ]
                 },
                 {
@@ -133,7 +119,7 @@
                     "country": "Argentina",
                     "photo": "data/things/LOGO.png",
                     "socialNetworks": [
-                        {"platform": "twitter", "url": "https://twitter.com/juanfrancisco", "icon": "fab fa-twitter"}
+                        {"platform": "instagram", "url": "https://instagram.com/juanfra_piro", "icon": "fab fa-instagram"}
                     ]
                 },
                 {
@@ -156,19 +142,15 @@
                     "country": "Colombia",
                     "photo": "data/things/LOGO.png",
                     "socialNetworks": [
-                        {"platform": "instagram", "url": "https://instagram.com/josselortiz", "icon": "fab fa-instagram"},
-                        {"platform": "twitter", "url": "https://twitter.com/josselortiz", "icon": "fab fa-twitter"},
-                        {"platform": "linkedin", "url": "https://linkedin.com/in/josselortiz", "icon": "fab fa-linkedin"},
-                        {"platform": "facebook", "url": "https://facebook.com/josselortiz", "icon": "fab fa-facebook"}
+                        {"platform": "instagram", "url": "https://instagram.com/jossel_33", "icon": "fab fa-instagram"}
                     ]
                 },
                 {
-                    "name": "Jerónimo Avedaño",
+                    "name": "Gerónimo Avendaño",
                     "country": "Argentina",
                     "photo": "data/things/LOGO.png",
                     "socialNetworks": [
-                        {"platform": "twitter", "url": "https://twitter.com/jeronimoavedano", "icon": "fab fa-twitter"},
-                        {"platform": "linkedin", "url": "https://linkedin.com/in/jeronimoavedano", "icon": "fab fa-linkedin"}
+                        {"platform": "instagram", "url": "https://instagram.com/_jero45_", "icon": "fab fa-instagram"}
                     ]
                 }
             ]

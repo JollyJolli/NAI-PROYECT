@@ -172,8 +172,8 @@ async function loadSponsorsScroller() {
         const response = await fetch('data/sobrenosotros.json');
         const data = await response.json();
         
-        if (data.sponsors && data.sponsors.length > 0) {
-            const sponsorNames = data.sponsors.map(sponsor => sponsor.name);
+        if (data.sponsors && data.sponsors.list && data.sponsors.list.length > 0) {
+            const sponsorNames = data.sponsors.list.map(sponsor => sponsor.name);
             const sponsorText = sponsorNames.join(' • ') + ' • ';
             
             const scrollerElement = document.querySelector('.sponsor-text');
