@@ -615,7 +615,7 @@ function loadExtraContent(data) {
     const leaguesGrid = extraSection.querySelector('.leagues-grid');
     if (data.leagues) {
         leaguesGrid.innerHTML = data.leagues
-            .map(league => `
+            .map((league, index) => `
                 <div class="league-container">
                     <div class="league-card" style="--bg-image: url('${league.banner || 'data/things/LOGO.png'}');">
                         <div class="league-content">
@@ -625,14 +625,16 @@ function loadExtraContent(data) {
                                 </div>
                             </div>
                             <div class="league-discord">
-                                <a href="${league.discord}" target="_blank" class="discord-btn">
-                                    <i class="fab fa-discord"></i> Únete
-                                </a>
+                                ${league.id === 'coming-soon' ? 
+                                    `<span class="coming-soon-btn">
+                                        <i class="fas fa-clock"></i> Coming Soon...
+                                    </span>` :
+                                    `<a href="${league.discord}" target="_blank" class="discord-btn">
+                                        <i class="fab fa-discord"></i> Únete
+                                    </a>`
+                                }
                             </div>
                         </div>
-                    </div>
-                    <div class="league-logo-card">
-                        <img src="${league.logo}" alt="${league.name}" class="league-logo">
                     </div>
                 </div>
             `)

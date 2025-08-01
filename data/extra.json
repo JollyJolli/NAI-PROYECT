@@ -55,6 +55,14 @@
                 "whatsapp": "https://wa.me/+1234567890",
                 "spotify": "https://open.spotify.com/show/prototype-endurance"
             }
+        },
+        {
+            "id": "coming-soon",
+            "name": "Coming Soon",
+            "logo": "/data/things/LOGO.png",
+            "banner": "/data/things/LOGO.png",
+            "discord": "#",
+            "social": {}
         }
     ],
     "usefulLinks": [

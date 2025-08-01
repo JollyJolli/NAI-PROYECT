@@ -49,7 +49,7 @@
 }
 
 .next-race {
-    background: #2c3e50;
+    background: var(--grid-bg);
     border: 1px solid #34495e;
     border-radius: 8px;
     padding: 2rem;

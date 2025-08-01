@@ -338,7 +338,7 @@ footer {
     flex-direction: column;
     gap: 1rem;
     padding: 2rem;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: var(--grid-bg);
     border-radius: 15px;
     margin: 2rem 0;
     max-width: 800px;
@@ -351,6 +351,9 @@ footer {
     align-items: stretch;
     gap: 0;
     margin-bottom: 1rem;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
 }
 
 .league-card {
@@ -360,27 +363,12 @@ footer {
     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     border-radius: 12px 0 0 12px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     min-height: 80px;
-    border: 2px solid transparent;
     flex: 1;
 }
 
-.league-logo-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.1) 100%);
-    border: 2px solid transparent;
-    border-left: none;
-    border-radius: 0 12px 12px 0;
-    padding: 1rem;
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    width: 80px;
-    min-height: 80px;
-}
+
 
 .league-card:hover {
     transform: translateY(-2px);
@@ -430,15 +418,7 @@ footer {
     letter-spacing: 1px;
 }
 
-.league-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    object-fit: cover;
-    background: #000;
-    border: 3px solid #3498db;
-    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
-}
+
 
 .league-discord {
     margin-left: auto;
@@ -449,13 +429,27 @@ footer {
     background: #5865F2;
     color: white;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 6px;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s ease;
     border: 2px solid #5865F2;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.coming-soon-btn {
+    display: inline-block;
+    background: #666;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 2px solid #666;
+    cursor: not-allowed;
+    opacity: 0.7;
 }
 
 .discord-btn:hover {
@@ -923,11 +917,7 @@ footer {
         border-radius: 12px 0 0 12px;
     }
     
-    .league-logo-card {
-        width: 60px;
-        min-height: 70px;
-        padding: 0.5rem;
-    }
+
     
     .league-content {
         padding: 0.8rem 1rem;
@@ -938,11 +928,7 @@ footer {
         letter-spacing: 0.5px;
     }
     
-    .league-logo {
-        width: 40px;
-        height: 40px;
-        border-width: 2px;
-    }
+
     
     .discord-btn {
         padding: 0.4rem 0.8rem;
