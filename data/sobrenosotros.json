@@ -27,7 +27,7 @@
                     "name": "Naitly Frei",
                     "role": "Fundador y Director General",
                     "country": "Alemania",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "twitter", "url": "https://twitter.com/naitlyfrei", "icon": "fab fa-twitter"},
                         {"platform": "twitch", "url": "https://twitch.tv/naitlyfrei", "icon": "fab fa-twitch"},
@@ -40,7 +40,7 @@
                     "name": "Kiro Victorio",
                     "role": "Co-Director y Coordinador",
                     "country": "México",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "twitch", "url": "https://twitch.tv/kirovictorio", "icon": "fab fa-twitch"},
                         {"platform": "twitter", "url": "https://twitter.com/kirovictorio", "icon": "fab fa-twitter"}
@@ -54,7 +54,7 @@
                 {
                     "name": "Esteban Hernández",
                     "country": "México",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "instagram", "url": "https://instagram.com/estebanjoelhernandezcampos", "icon": "fab fa-instagram"}
                     ]
@@ -62,19 +62,19 @@
                 {
                     "name": "Sol Gooda",
                     "country": "Venezuela",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": []
                 },
                 {
                     "name": "Chemantm Sánchez",
                     "country": "México",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": []
                 },
                 {
                     "name": "Álvaro Gutiérrez",
                     "country": "Perú",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "youtube", "url": "https://youtube.com/@alvarogutierrez", "icon": "fab fa-youtube"},
                         {"platform": "twitter", "url": "https://twitter.com/alvarogutierrez", "icon": "fab fa-twitter"},
@@ -85,7 +85,7 @@
                 {
                     "name": "Hernán Arteaga",
                     "country": "Colombia",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "twitch", "url": "https://twitch.tv/hernanarteaga", "icon": "fab fa-twitch"},
                         {"platform": "twitter", "url": "https://twitter.com/hernanarteaga", "icon": "fab fa-twitter"},
@@ -95,13 +95,13 @@
                 {
                     "name": "Miguel Monsalve",
                     "country": "Colombia",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": []
                 },
                 {
                     "name": "Galax Guaita",
                     "country": "Chile",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "instagram", "url": "https://instagram.com/galahad.66", "icon": "fab fa-instagram"}
                     ]
@@ -109,7 +109,7 @@
                 {
                     "name": "Dest Takahashi",
                     "country": "Uruguay",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "instagram", "url": "https://instagram.com/dest_takahashi", "icon": "fab fa-instagram"}
                     ]
@@ -117,7 +117,7 @@
                 {
                     "name": "Juan Francisco Piro",
                     "country": "Argentina",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "instagram", "url": "https://instagram.com/juanfra_piro", "icon": "fab fa-instagram"}
                     ]
@@ -125,7 +125,7 @@
                 {
                     "name": "Tuko Gómez",
                     "country": "Argentina",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "twitch", "url": "https://twitch.tv/tukogomez", "icon": "fab fa-twitch"},
                         {"platform": "youtube", "url": "https://youtube.com/@tukogomez", "icon": "fab fa-youtube"},
@@ -140,7 +140,7 @@
                 {
                     "name": "Jossel Ortiz",
                     "country": "Colombia",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "instagram", "url": "https://instagram.com/jossel_33", "icon": "fab fa-instagram"}
                     ]
@@ -148,7 +148,7 @@
                 {
                     "name": "Gerónimo Avendaño",
                     "country": "Argentina",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "instagram", "url": "https://instagram.com/_jero45_", "icon": "fab fa-instagram"}
                     ]
@@ -161,7 +161,7 @@
                 {
                     "name": "Andres Formen",
                     "country": "México",
-                    "photo": "data/things/LOGO.png",
+                    "photo": "data/things/user.png",
                     "socialNetworks": [
                         {"platform": "github", "url": "https://github.com/jollyjolli", "icon": "fab fa-github"},
                         {"platform": "instagram", "url": "https://instagram.com/formen.aa", "icon": "fab fa-instagram"},
